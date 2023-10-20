@@ -1,0 +1,23 @@
+{% extends "base_site.html" %}
+{% block content %}
+<p>Below is a list of the phase with pictures at each stage.</p>
+    {% if phase_list %}
+        <table>
+            <th>Link</th>
+            <th>Description</th>
+
+
+            {% for phase in phase_list %}
+                <tr>
+                    <td><a href="{% url 'WebsiteProgress:phase' phase.id %}">Phase {{phase.id}}</a>
+                    </td>
+                    <td>{{phase.phase_description}}</td>
+                </tr>
+            {% endfor %}
+        </table>
+    {% else %}
+        <p> Nothing available</p>
+    {% endif %}
+<p>I think it is important to show mistakes so here are mine.</p>
+
+{% endblock content %}

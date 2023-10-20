@@ -1,0 +1,15 @@
+<div class="topnav">
+    <a href="{% url 'index' %}">Home</a>
+    <a href="{% url 'LeavingCert:index' %}">Leaving Certificate</a>
+    <a href="{% url 'Math340:index' %}">Math 340</a>
+    <div class="dropdown">
+      <a href="{% url 'WebsiteProgress:index' %}">Website Progress
+      </a>
+      <div class="dropdown-content">
+        {% for phase in All_Phases %}
+          <a href="{% url 'WebsiteProgress:phase' phase.id %}">Phase {{phase.id}}</a>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+  

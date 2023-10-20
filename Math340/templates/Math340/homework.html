@@ -1,0 +1,13 @@
+{% extends "base_site.html" %}
+{% block content %}
+<!-- include ""|add:week.week_web_text -->
+
+<h1>Worksheet</h1>
+{% load static %}
+<p>Here is this weeks <a href="{% static ''|add:Week.week_worksheet %}">Worksheet</a></p>
+
+{% include ""|add:Week.week_web_text %}
+
+{% include "calcCenter.html" %}
+
+{% endblock content %}

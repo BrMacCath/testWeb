@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'style.css' %}">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+{% include "header.html" %}
+
+
+<div>
+  <div class="main-container">
+    {% include 'sidebar.html' %}
+    <div class="content">
+      
+      {% block content %}{% endblock content %}
+    </div>
+  </div>
+</div>
+</body>
+
+
+
+

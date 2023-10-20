@@ -1,0 +1,28 @@
+{% extends "base_site.html" %}
+{% block content %}
+
+    <h1>Homework Resources</h1>
+    <table>
+        <tr>
+            <th>Homework</th>
+            <th>Topics</th>
+            <th>Quiz</th>
+        </tr>
+        {% if week_list %}
+            {% for week in week_list %}
+                <tr>
+                    <td><a href="{% url 'Math340:homework' week_weight=week.weight %}"> {{week.week_homework}}</a></td>
+                    <td>{{week.week_homework_description}}</td>
+                    {% if week.week_quiz_boolean %}
+                    {% load static %}
+                        <td><a href='{% static ""|add:week.week_quiz_location %}'>{{week.week_quiz_title}}</a></td>
+                    {% else %}
+                        <td>None this week</td>
+                    {% endif %}
+                </tr>
+            {% endfor %}
+        {% endif %}
+
+    </table>
+{% include "calcCenter.html" %}
+{% endblock content %}
