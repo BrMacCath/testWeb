@@ -63,7 +63,7 @@ ROOT_URLCONF = 'djangoSite.urls'
 
 
 
-# Need to add testWeb/ before pushing
+# Need to add testWeb/ before
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
