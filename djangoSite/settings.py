@@ -63,11 +63,11 @@ ROOT_URLCONF = 'djangoSite.urls'
 
 
 
-
+# Need to add testWeb/ before pushing
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['djangoSite/templates','WebsiteProgress/templates/WebsiteProgress','Math340/templates/Math340'],
+        'DIRS': ['testWeb/djangoSite/templates','testWeb/WebsiteProgress/templates/WebsiteProgress','testWeb/Math340/templates/Math340'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
