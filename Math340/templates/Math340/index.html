@@ -24,6 +24,20 @@
         {% endif %}
 
     </table>
+    <table>
+        <tr>
+            <th>Workshop Notes</th>
+        </tr>
+        {% if workshop_list %}
+            {% for workshop in workshop_list %}
+                <tr>
+                    {% load static %}
+                    <td><a href="{% static ''|add:workshop.workshop_location %}">Workshop 1</a></td>
+
+                </tr>
+            {% endfor %}
+    {% endif %}
+    </table>
 {% include "calcCenter.html" %}
 
 <h1> Google doc</h1>

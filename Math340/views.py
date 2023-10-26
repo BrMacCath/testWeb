@@ -5,7 +5,7 @@ from django.urls import reverse
 from django.views import generic
 
 from django.shortcuts import get_object_or_404, render
-from .models import Choice, Question, Week
+from .models import Choice, Question, Week, WorkShop
 
 
 class IndexView(generic.ListView):
@@ -35,7 +35,8 @@ class HomeworkView(generic.DetailView):
 def index(request):
     latest_question_list = Question.objects.order_by("-pub_date")[:5]
     week_list = Week.objects.all
-    context = {"latest_question_list": latest_question_list, "week_list": week_list}
+    workshop_list = WorkShop.objects.all
+    context = {"latest_question_list": latest_question_list, "week_list": week_list, "workshop_list": workshop_list}
     return render(request, "Math340/index.html", context)
 
 def detail(request, question_id):
