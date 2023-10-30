@@ -73,3 +73,7 @@ def vote(request, question_id):
 def homework_page(request,week_weight):
     week_page = get_object_or_404(Week,weight=week_weight)
     return render(request, "Math340/homework.html",{"Week":week_page})
+
+def workShop_page(request,weight):
+    workshop_page = get_object_or_404(WorkShop,weight=weight)
+    return render(request, "Math340/workshop.html",{"workshop":workshop_page})

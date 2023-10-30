@@ -24,16 +24,18 @@
         {% endif %}
 
     </table>
+    <h1>Workshop Resources</h1>
     <table>
         <tr>
             <th>Workshop Notes</th>
+            <th> Description</th>
         </tr>
         {% if workshop_list %}
             {% for workshop in workshop_list %}
                 <tr>
                     {% load static %}
-                    <td><a href="{% static ''|add:workshop.workshop_location %}">Workshop 1</a></td>
-
+                    <td><a href="{% url 'Math340:workshop' weight=workshop.weight %}">{{workshop.workshop_title}}</a></td>
+                    <td>{{workshop.workshop_description}} {{workshop.weight}}</td>
                 </tr>
             {% endfor %}
     {% endif %}

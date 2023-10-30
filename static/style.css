@@ -101,7 +101,7 @@ margin-top: 48px;
     background-color: red;
     text-decoration: underline;
 }
-h1,h2,p,ul{
+h1,h2,p,ul,table{
     padding-bottom: 10px;
 } 
 
@@ -171,4 +171,7 @@ body{
 }
 .sidenav ul li a .opener{
     float:right;
+}
+table {
+    margin-bottom: 0.6rem;
 }

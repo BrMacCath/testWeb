@@ -12,7 +12,7 @@ class WeekAdmin(admin.ModelAdmin):
     list_display = ["week_homework", "week_quiz_location", "week_web_text"]
 
 class WorkshopAdmin(admin.ModelAdmin):
-    fieldsets =[ ("Properties",{"fields": ["weight","workshop_location"]}  ), ]
+    fieldsets =[ ("Properties",{"fields": ["weight","workshop_location","workshop_description","workshop_webpage", "workshop_title"]}  ), ]
     list_display = ["weight","workshop_location"]
 
 class ChoiceInline(admin.TabularInline):

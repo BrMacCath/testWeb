@@ -51,7 +51,9 @@ class WorkShop(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     workshop_location = models.CharField(max_length=100,default="test")
     weight = models.PositiveBigIntegerField(default=0)
-    str_return = models.CharField(max_length=100,default="test")
+    workshop_webpage = models.CharField(max_length=100,default="Not described")
+    workshop_description = models.CharField(max_length=100,default="Not described")
+    workshop_title = models.CharField(max_length=100,default="test")
     @admin.display(
         boolean=True,
         ordering="weight",

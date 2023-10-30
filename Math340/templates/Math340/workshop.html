@@ -1,0 +1,14 @@
+{% extends "base_site.html" %}
+{% block content %}
+<!-- include ""|add:week.week_web_text -->
+
+<h1>Worksheet</h1>
+{% load static %}
+<p>This is the <a href="{% static ''|add:workshop.workshop_location %}">Worksheet</a></p>
+
+{% include ""|add:workshop.workshop_webpage %}
+
+{% include "calcCenter.html" %}
+<h1> Google doc</h1>
+<p>What <a href ="https://docs.google.com/forms/d/e/1FAIpQLScsBDMvX1j9QRg39nZHnhx9xXN5qIEDn3KZTJ1VBf1g-jh4oQ/viewform?usp=sf_link">suggestions</a> do you have?</p>
+{% endblock content %}
