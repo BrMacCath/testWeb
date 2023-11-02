@@ -65,9 +65,7 @@ background-color: inherit;
 font-family: inherit;
 margin: 0;
 }
-li a {
-    color: green;
-}
+
 .dropdown-content {
     display: none;
     position: absolute;
@@ -105,6 +103,22 @@ h1,h2,p,ul,table{
     padding-bottom: 10px;
 } 
 
+
+
+li.has-sub-menu>a span{
+    display: inline-block;
+    height: 32px;
+    line-height: 2;
+    position: absolute;
+    right: 18px;
+    text-align: center;
+    top: 0;
+    width: 32px;
+    background: #f2f2f2;
+    border-left: 1px solid #e7e7e7;
+    color: #979797;
+}
+
 .main-container{
     margin-top: 48px;
 }
@@ -112,18 +126,20 @@ h1,h2,p,ul,table{
     padding-top: 15px;
     margin-left: 250px;
 }
-
-.sidenav{
+.sidenav-container{
     background-color: #ffffff;
-    width: 200px;
-    position:absolute;
-    overflow-y:scroll;
+    width: 200px; 
     overflow-x: hidden;
-    display: block;
+    overflow-y: scroll;
+    
     margin-left: 0;
     margin-top: 0;
     position: fixed;
-    margin-bottom: 0;
+}
+.sidenav{
+    width: 100%;
+    display: block;
+    overflow: visible;
 }
 
 .sidenav ul{
@@ -132,8 +148,8 @@ h1,h2,p,ul,table{
 }
 
 .sidenav ul li a{
-    display: flex;
-    flex-direction: column;
+    position: relative;
+    display: block;
     color: #000000;
     float: top;
     padding: 14px 5px;
@@ -175,3 +191,7 @@ body{
 table {
     margin-bottom: 0.6rem;
 }
+.sidebar-footer {
+    padding: 1.6666666667rem;
+
+  }
