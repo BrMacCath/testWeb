@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     "LeavingCert.apps.LeavingcertConfig",
     "WebsiteProgress.apps.WebsiteProgressConfig",
     "Math340.apps.Math340Config",
+    "Lin.apps.LinConfig",
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

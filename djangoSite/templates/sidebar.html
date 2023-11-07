@@ -1,21 +1,23 @@
 <div class ="sidenav-container">
-    <div class="sidenav">
-        <ul>
-            <li>
-                <a href="{% url 'index' %}">Home</a>
-            </li>
-            <li>
-                <a href="{% url 'contact' %}">Contact</a>
-            </li>
-            <li class="has-sub-menu">
-                <a href="#">Test <span>+</span></a>
-            </li>
-            <li class="has-sub-menu">
-                <a href="#">Test <span>+</span></a>
-            </li>
-        </ul>
-        <div class="sidebar-footer">
+    <div class="scroller">
+        <div class="sidenav">
+            <ul>
+                <li>
+                    <a href="{% url 'index' %}">Home</a>
+                </li>
+                <li>
+                    <a href="{% url 'contact' %}">Contact</a>
+                </li>
+                <li class="has-sub-menu">
+                    <a href="{% url 'Lin:index' %}">Linear Algebra<span>+</span></a>
+                </li>
+                <li class="has-sub-menu">
+                    <a href="#">Test <span>+</span></a>
+                </li>
+            </ul>
+            <div class="sidebar-footer">
 
+            </div>
         </div>
     </div>
 </div>

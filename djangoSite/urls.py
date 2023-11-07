@@ -26,6 +26,7 @@ urlpatterns = [
     path('WebsiteProgress/',include("WebsiteProgress.urls")),
     path('admin/', admin.site.urls),
     path('LeavingCert/',include("LeavingCert.urls")),
+    path('Lin/',include("Lin.urls")),
 ]
 
 # if settings.DEBUG:

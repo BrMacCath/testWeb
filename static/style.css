@@ -110,7 +110,7 @@ li.has-sub-menu>a span{
     height: 32px;
     line-height: 2;
     position: absolute;
-    right: 18px;
+    right: 10px;
     text-align: center;
     top: 0;
     width: 32px;
@@ -129,17 +129,20 @@ li.has-sub-menu>a span{
 .sidenav-container{
     background-color: #ffffff;
     width: 200px; 
-    overflow-x: hidden;
-    overflow-y: scroll;
-    
+    overflow-x: hidden;    
     margin-left: 0;
     margin-top: 0;
     position: fixed;
 }
 .sidenav{
-    width: 100%;
+    width: 200px; 
     display: block;
     overflow: visible;
+}
+.scroller {
+    height: 100%;
+    width: 230px;
+    overflow-y:scroll;
 }
 
 .sidenav ul{
