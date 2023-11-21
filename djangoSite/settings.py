@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     "LeavingCert.apps.LeavingcertConfig",
     "WebsiteProgress.apps.WebsiteProgressConfig",
     "Math340.apps.Math340Config",
+    "Misc.apps.MiscConfig",
     "Lin.apps.LinConfig",
     'django.contrib.admin',
     'django.contrib.auth',
@@ -48,6 +49,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'nested_inline',
 ]
 
 MIDDLEWARE = [
@@ -68,7 +70,7 @@ ROOT_URLCONF = 'djangoSite.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['testWeb/djangoSite/templates','testWeb/WebsiteProgress/templates/WebsiteProgress','testWeb/Math340/templates/Math340'],
+        'DIRS': ['djangoSite/templates','WebsiteProgress/templates/WebsiteProgress','Math340/templates/Math340'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
