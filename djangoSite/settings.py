@@ -70,7 +70,7 @@ ROOT_URLCONF = 'djangoSite.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['djangoSite/templates','WebsiteProgress/templates/WebsiteProgress','Math340/templates/Math340'],
+        'DIRS': ['testWeb/djangoSite/templates','testWeb/WebsiteProgress/templates/WebsiteProgress','testWeb/Math340/templates/Math340'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -79,6 +79,8 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'WebsiteProgress.context_processors.All_Phases',
+                'Misc.context_processors.All_Topics',
+                'Lin.context_processors.Lin_Topics'
             ],
         },
     },

@@ -39,10 +39,16 @@ class Week(models.Model):
     week_homework = models.CharField(max_length=100,default="homework")
     pub_date = models.DateTimeField("date published")
     weight = models.PositiveBigIntegerField(default=0)
+
+    class Meta:
+        ordering = ["weight"]
+
+
     @admin.display(
         boolean=True,
         ordering="weight",
     )
+
     def __str__(self):
         return self.week_web_text
     
@@ -54,6 +60,11 @@ class WorkShop(models.Model):
     workshop_webpage = models.CharField(max_length=100,default="Not described")
     workshop_description = models.CharField(max_length=100,default="Not described")
     workshop_title = models.CharField(max_length=100,default="test")
+
+    class Meta:
+        ordering = ["weight"]
+
+
     @admin.display(
         boolean=True,
         ordering="weight",
