@@ -10,11 +10,15 @@
                 </li>
                 <li class="has-sub-menu">
                     <a href="{% url 'Lin:index' %}">Linear Algebra<span>+</span></a>
-                    {% for topic in Lin_Topics %}
-                    <li >
-                        <a href="{% url 'Lin:topic' weight=topic.weight %}">{{topic.topic_title}}</a>
-                    </li>
-                    {% endfor %}
+                    {% if Lin_Topics %}
+                        <ul>
+                            {% for topic in Lin_Topics %}
+                            <li >
+                                <a href="{% url 'Lin:topic' weight=topic.weight %}">{{topic.topic_title}}</a>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
                 </li>
 
                 {% for topic in All_Topics %}

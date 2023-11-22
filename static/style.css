@@ -164,10 +164,12 @@ li.has-sub-menu>a span{
     margin: inherit;
     border-bottom: 1px solid rgb(176, 174, 174);
 }
-.sidenav>ul>li.has-sub-menu li a {
+.sidenav ul li.has-sub-menu> ul li a {
     padding-left: 2rem;
 }
-
+.sidenav ul li.has-sub-menu> ul  {
+    padding-bottom: 0;
+}
 
 footer{
     bottom: 0px;
