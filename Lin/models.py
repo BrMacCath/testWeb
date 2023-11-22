@@ -12,6 +12,9 @@ class Topic(models.Model):
     topic_webpage = models.CharField(max_length=100,default="Not described")
     topic_description = models.CharField(max_length=100,default="Not described")
     topic_title = models.CharField(max_length=100,default="test")
+    class Meta:
+        ordering = ["weight"]
+
     @admin.display(
         boolean=True,
         ordering="weight",

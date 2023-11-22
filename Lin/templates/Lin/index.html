@@ -3,7 +3,7 @@
 <p> This is where the content for linear algebra material I think will be useful will be put. I am going to focus on content relating to eigenvectors and eigenvalues.</p>
 
 <p>I am not going to be able to add anything to this before Thanksgiving break.</p>
-<h1>Homework Resources</h1>
+<h1>Linear Resources</h1>
 <table>
     <tr>
         <th>Title</th>
@@ -12,13 +12,13 @@
     {% if Lin_Topics %}
         {% for topic in Lin_Topics %}
             <tr>
-                <td>{{topic.topic_location}}</td>
-
+                <td><a href="{% url 'Lin:topic' weight=topic.weight %}"> {{topic.topic_title}}</a></td>
                 <td>{{topic.topic_description}}</td>
             </tr>
         {% endfor %}
     {% endif %}
 
 </table>
+<p> This is just the setup. Content to arrive a little later.</p>
 
 {% endblock content %}

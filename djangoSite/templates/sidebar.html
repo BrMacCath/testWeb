@@ -10,10 +10,16 @@
                 </li>
                 <li class="has-sub-menu">
                     <a href="{% url 'Lin:index' %}">Linear Algebra<span>+</span></a>
+                    {% for topic in Lin_Topics %}
+                    <li >
+                        <a href="{% url 'Lin:topic' weight=topic.weight %}">{{topic.topic_title}}</a>
+                    </li>
+                    {% endfor %}
                 </li>
-                {% for topic in Lin_Topics %}
+
+                {% for topic in All_Topics %}
                 <li class="has-sub-menu">
-                    <a href="{% url 'Lin:index' %}">{{topic.topic_title}}<span>+</span></a>
+                    <a href="{% url 'Misc:index' %}">{{topic.topic_name}}<span>+</span></a>
                 </li>
                 {% endfor %}
             </ul>

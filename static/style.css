@@ -124,25 +124,26 @@ li.has-sub-menu>a span{
 }
 .content{
     padding-top: 15px;
-    margin-left: 250px;
+    margin-left: 260px;
 }
 .sidenav-container{
     background-color: #ffffff;
-    width: 200px; 
+    width: 220px; 
     overflow-x: hidden;    
     margin-left: 0;
     margin-top: 0;
     position: fixed;
 }
 .sidenav{
-    width: 200px; 
+    width: 220px; 
     display: block;
     overflow: visible;
 }
 .scroller {
     height: 100%;
-    width: 230px;
+    width: 240px;
     overflow-y:scroll;
+    overflow-x: hidden;
 }
 
 .sidenav ul{
@@ -158,11 +159,15 @@ li.has-sub-menu>a span{
     padding: 14px 5px;
     text-decoration: none;
     font-size: 17px;
-    width: 200px;
+    width: 220px;
     text-align: left;
     margin: inherit;
     border-bottom: 1px solid rgb(176, 174, 174);
 }
+.sidenav>ul>li.has-sub-menu li a {
+    padding-left: 2rem;
+}
+
 
 footer{
     bottom: 0px;
