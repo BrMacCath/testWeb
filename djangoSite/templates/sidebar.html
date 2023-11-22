@@ -16,12 +16,6 @@
                     <a href="{% url 'Lin:index' %}">{{topic.topic_title}}<span>+</span></a>
                 </li>
                 {% endfor %}
-
-                {% for topic in All_Topics %}
-                    <li class="has-sub-menu">
-                        <a href="{% url 'Misc:index' %}">{{topic.topic_name}} <span>+</span></a>
-                    </li>
-                {% endfor %}
             </ul>
             <div class="sidebar-footer">
 
