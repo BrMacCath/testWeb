@@ -166,8 +166,12 @@ li.has-sub-menu>a span{
 }
 .sidenav ul li.has-sub-menu> ul li a {
     padding-left: 2rem;
+    
+}
+li.has-sub-menu> ul {
     display: none;
 }
+
 .sidenav ul li.has-sub-menu> ul  {
     padding-bottom: 0;
 }
