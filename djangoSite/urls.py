@@ -28,6 +28,7 @@ urlpatterns = [
     path('LeavingCert/',include("LeavingCert.urls")),
     path('Lin/',include("Lin.urls")),
     path('Misc/',include("Misc.urls")),
+    path('Math_161/',include("Math_161.urls")),
 ]
 
 # if settings.DEBUG:

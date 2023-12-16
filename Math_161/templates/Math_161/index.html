@@ -1,0 +1,27 @@
+{% extends "base_site.html" %}
+{% block content %}
+
+{% if weeks %}
+    <table>
+        <tr>
+            <th>Week Number</th>
+            <th>Monday</th>
+            <th>Tuesday</th>
+            <th>Wednesday</th>
+            <th>Friday</th>
+            <th>Quiz</th>
+        </tr>
+        
+        {% for week in weeks %}
+        <tr>
+            <td>
+                <a href="{% url 'Math_161:week' week_num=week.week_num %}">Week {{week.week_num}}</a>
+            </td>
+        </tr>
+        {% endfor %}
+
+    </table>
+
+{% endif %}
+
+{% endblock content %}

@@ -39,10 +39,9 @@ class Week(models.Model):
     week_homework = models.CharField(max_length=100,default="homework")
     pub_date = models.DateTimeField("date published")
     weight = models.PositiveBigIntegerField(default=0)
-
+    
     class Meta:
         ordering = ["weight"]
-
 
     @admin.display(
         boolean=True,
@@ -63,7 +62,6 @@ class WorkShop(models.Model):
 
     class Meta:
         ordering = ["weight"]
-
 
     @admin.display(
         boolean=True,
