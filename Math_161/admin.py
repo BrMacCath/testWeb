@@ -4,17 +4,9 @@ from django.utils.translation import ngettext
 import random
 # Register your models here.
 
-weekday_with_class=[(1,"Monday"),(2,"Tuesday"),(3,"Wednesday"),(4,"Friday")]
+weekday_with_class=[("Mon","Monday"),("Tue","Tuesday"),("Wed","Wednesday"),("Fri","Friday")]
 
 
-
-
-
-@admin.action(description="Filled in days")
-def make_days(self,request,queryset):
-    for day in weekday_with_class:
-        pass
-    pass
 
 @admin.action(description="Change publish date to today")
 def make_published(self, request, queryset):
@@ -78,7 +70,7 @@ class WeekAdmin(admin.ModelAdmin):
     fieldsets =[ ("Overall Week Details",{"fields": ["week_num","week_title","week_description"]}  ),
                  ("Quiz Details",{"fields": ["quiz_Boolean","quiz_description"]}), ]
     list_display = ["week_num","week_title"]
-    actions = [make_days,make_published,quiz_week,not_quiz_week]
+    actions = [make_published,quiz_week,not_quiz_week]
     inlines =[DayInline]
 
 

@@ -7,7 +7,8 @@ import uuid
 from django.utils.timezone import make_aware
 # Create your models here.
 
-weekday_with_class=[(1,"Monday"),(2,"Tuesday"),(3,"Wednesday"),(4,"Friday")]
+weekday_with_class=[("Mon","Monday"),("Tue","Tuesday"),("Wed","Wednesday"),("Fri","Friday")]
+
 
 ## Week Model
 # This should have several characteristics.
@@ -56,7 +57,12 @@ class Week(models.Model):
 # 
 
 class Day(models.Model):
-    week = models.ForeignKey(Week, on_delete=models.CASCADE)
-    day = models.PositiveSmallIntegerField(default=(1,"Monday"),choices=weekday_with_class)
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    week = models.ForeignKey(Week, on_delete=models.CASCADE,related_name="days")
+    day = models.CharField(default=("Mon","Monday"),choices=weekday_with_class,max_length=10)
     day_webpage_source= models.CharField(default="test",max_length=50)
     day_description = models.CharField(default="test",max_length=300)
+    def __str__(self) -> str:
+        return self.day
+    
+
