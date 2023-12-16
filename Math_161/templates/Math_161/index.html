@@ -17,6 +17,16 @@
             <td>
                 <a href="{% url 'Math_161:week' week_num=week.week_num %}">Week {{week.week_num}}</a>
             </td>
+            {% if week.quiz_Boolean %}
+                <td>
+                    Quiz
+                </td>
+            {% else %}
+                <td>
+                    No Quiz
+                </td>
+            {% endif %}
+            
         </tr>
         {% endfor %}
 

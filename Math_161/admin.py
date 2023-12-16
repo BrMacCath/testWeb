@@ -41,9 +41,22 @@ def quiz_week(self, request, queryset):
             )
             % quiz_weeks,
         )
-    
-@admin.action(description="Not quiz week")
+
+@admin.action(description="Make quiz week")
 def quiz_week(self, request, queryset):
+    quiz_weeks = queryset.update(quiz_Boolean=True)
+    self.message_user(
+            request,
+            ngettext(
+                "%d week has a quiz.",
+                "%d weeks have quizzes.",
+                quiz_weeks,
+            )
+            % quiz_weeks,
+        )
+    
+@admin.action(description="Remove quiz week")
+def not_quiz_week(self, request, queryset):
     quiz_weeks = queryset.update(quiz_Boolean=False)
     self.message_user(
             request,
@@ -65,7 +78,7 @@ class WeekAdmin(admin.ModelAdmin):
     fieldsets =[ ("Overall Week Details",{"fields": ["week_num","week_title","week_description"]}  ),
                  ("Quiz Details",{"fields": ["quiz_Boolean","quiz_description"]}), ]
     list_display = ["week_num","week_title"]
-    actions = [make_days,make_published,quiz_week]
+    actions = [make_days,make_published,quiz_week,not_quiz_week]
     inlines =[DayInline]
 
 
