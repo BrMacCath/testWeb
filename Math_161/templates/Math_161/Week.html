@@ -1,5 +1,9 @@
 {% extends "base_site.html" %}
 {% block content %}
+
+{% with week_num=week.week_num|stringformat:"i" %}
+    {% include ""|add:"Week_"|add:week_num|add:"\\Week.html" %}
+{% endwith %}
 <table>
     <tr>
         <th>Day</th>
@@ -17,4 +21,10 @@
     {% endfor %}
 
 </table>
+
+
+{% include "calcCenter.html" %}
+<h1> Google doc</h1>
+<p>What <a href ="https://docs.google.com/forms/d/e/1FAIpQLScsBDMvX1j9QRg39nZHnhx9xXN5qIEDn3KZTJ1VBf1g-jh4oQ/viewform?usp=sf_link">suggestions</a> do you have?</p>
+
 {% endblock content %}

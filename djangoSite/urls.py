@@ -22,11 +22,9 @@ from django.conf.urls.static import static
 urlpatterns = [
     path("", views.index, name="index"),
     path("contact", views.contact, name="contact"),
-    path('Math340/',include("Math340.urls")),
     path('WebsiteProgress/',include("WebsiteProgress.urls")),
     path('admin/', admin.site.urls),
     path('LeavingCert/',include("LeavingCert.urls")),
-    path('Lin/',include("Lin.urls")),
     path('Misc/',include("Misc.urls")),
     path('Math_161/',include("Math_161.urls")),
 ]

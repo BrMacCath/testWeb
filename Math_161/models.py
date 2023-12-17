@@ -33,7 +33,7 @@ class Week(models.Model):
     week_webpage_source= models.CharField(default="test",max_length=50)
     week_title = models.CharField(default="test",max_length=300)
     week_description = models.CharField(default="test",max_length=300)
-    pub_date = models.DateTimeField(auto_now_add=True)
+    pub_date = models.DateTimeField("date published")
 
     # This is for the weeks where there are quizzes
     quiz_Boolean = models.BooleanField(default=False)
@@ -63,7 +63,7 @@ class Day(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     week = models.ForeignKey(Week, on_delete=models.CASCADE,related_name="days")
     day = models.CharField(default=("Monday","Monday"),choices=weekday_with_class,max_length=10)
-    day_webpage_source= models.CharField(default="test",max_length=50)
+    day_worksheet_source= models.CharField(default="#",max_length=50)
     day_description = models.CharField(default="test",max_length=300)
     def __str__(self) -> str:
         return self.day

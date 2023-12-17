@@ -1,8 +1,15 @@
 {% extends "base_site.html" %}
 {% block content %}
+<h1>Notes about today</h1>
+<h2>Today's worksheet</h2>
+{% load static %}
+<p>Todays worksheet can be found <a href="https://drive.google.com/file/d/1Esf2i32JCG6rle6nNPeHuq3xLAApIOIX/view?usp=drive_link">here</a> </p>
 
 {% with week_num=week.week_num|stringformat:"i" %}
     {% include ""|add:"Week_"|add:week_num|add:"\\"|add:day|add:".html" %}
 {% endwith %}
+{% include "calcCenter.html" %}
+<h1> Google doc</h1>
+<p>What <a href ="https://docs.google.com/forms/d/e/1FAIpQLScsBDMvX1j9QRg39nZHnhx9xXN5qIEDn3KZTJ1VBf1g-jh4oQ/viewform?usp=sf_link">suggestions</a> do you have?</p>
 
 {% endblock content %}

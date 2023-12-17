@@ -67,7 +67,7 @@ class DayInline(admin.TabularInline):
     extra = 0
 
 class WeekAdmin(admin.ModelAdmin):
-    fieldsets =[ ("Overall Week Details",{"fields": ["week_num","week_title","week_description"]}  ),
+    fieldsets =[ ("Overall Week Details",{"fields": ["week_num","week_title","week_description","pub_date"]}  ),
                  ("Quiz Details",{"fields": ["quiz_Boolean","quiz_description"]}), ]
     list_display = ["week_num","week_title"]
     actions = [make_published,quiz_week,not_quiz_week]

@@ -8,18 +8,6 @@
                 <li>
                     <a href="{% url 'contact' %}">Contact</a>
                 </li>
-                <li class="has-sub-menu">
-                    <a href="{% url 'Lin:index' %}">Linear Algebra<span>+</span></a>
-                    {% if Lin_Topics %}
-                        <ul>
-                            {% for topic in Lin_Topics %}
-                            <li >
-                                <a href="{% url 'Lin:topic' weight=topic.weight %}">{{topic.topic_title}}</a>
-                            </li>
-                            {% endfor %}
-                        </ul>
-                    {% endif %}
-                </li>
 
                 {% for topic in All_Topics %}
                 <li class="has-sub-menu">

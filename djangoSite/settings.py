@@ -40,10 +40,8 @@ SESSION_COOKIE_SECURE= True
 INSTALLED_APPS = [
     "LeavingCert.apps.LeavingcertConfig",
     "WebsiteProgress.apps.WebsiteProgressConfig",
-    "Math340.apps.Math340Config",
     "Math_161.apps.Math_161Config",
     "Misc.apps.MiscConfig",
-    "Lin.apps.LinConfig",
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -70,7 +68,7 @@ ROOT_URLCONF = 'djangoSite.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR,'djangoSite/templates'),os.path.join(BASE_DIR,'WebsiteProgress/templates/WebsiteProgress'),os.path.join(BASE_DIR,'Math340/templates/Math340'),os.path.join(BASE_DIR,'Math_161/templates/Math_161')],
+        'DIRS': [os.path.join(BASE_DIR,'djangoSite/templates'),os.path.join(BASE_DIR,'WebsiteProgress/templates/WebsiteProgress'),os.path.join(BASE_DIR,'Math_161/templates/Math_161')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -80,7 +78,6 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
                 'WebsiteProgress.context_processors.All_Phases',
                 'Misc.context_processors.All_Topics',
-                'Lin.context_processors.Lin_Topics'
             ],
         },
     },
