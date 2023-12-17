@@ -63,7 +63,7 @@ class Day(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     week = models.ForeignKey(Week, on_delete=models.CASCADE,related_name="days")
     day = models.CharField(default=("Monday","Monday"),choices=weekday_with_class,max_length=10)
-    day_worksheet_source= models.CharField(default="#",max_length=50)
+    day_worksheet_source= models.CharField(default="#",max_length=100)
     day_description = models.CharField(default="test",max_length=300)
     def __str__(self) -> str:
         return self.day

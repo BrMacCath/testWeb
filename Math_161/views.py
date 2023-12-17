@@ -17,7 +17,9 @@ def week(request,week_num):
 
 def day(request,week_num,day):
     week= get_object_or_404(Week, week_num=week_num)
-    context = {"week": week,"week_num":week_num,"day":day}
+    tempDay= Day.objects.filter(day=day).prefetch_related("week")
+    # tempDay = tempDay.objects.get(week_num=week_num)
+    context = {"week": week,"week_num":week_num,"day":day,"worksheet_source":tempDay}
     return render(request, "Math_161/Day.html",context=context)
 
 def detail(request, week_id):
