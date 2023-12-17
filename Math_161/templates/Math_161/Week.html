@@ -8,7 +8,7 @@
     {% for day in week.days.all %}
     <tr>
         <td>
-            <a href="{% url 'Math_161:day' week_num=week.week_num  day_name=day.day %}"> {{day.day }}</a>
+            <a href="{% url 'Math_161:day' week_num=week.week_num  day=day %}"> {{day.day }}</a>
         </td>
         <td>
             {{day.day_description}}

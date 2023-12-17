@@ -7,7 +7,7 @@ import uuid
 from django.utils.timezone import make_aware
 # Create your models here.
 
-weekday_with_class=[("Mon","Monday"),("Tue","Tuesday"),("Wed","Wednesday"),("Fri","Friday")]
+weekday_with_class=[("Monday","Monday"),("Tuesday","Tuesday"),("Wednesday","Wednesday"),("Friday","Friday")]
 
 
 ## Week Model
@@ -42,6 +42,9 @@ class Week(models.Model):
     class Meta:
         ordering =["week_num"]
 
+    def get_day(self,day):
+        pass
+
     def create_week(self):
         #This will create the day and the html source
         for day in weekday_with_class:
@@ -59,7 +62,7 @@ class Week(models.Model):
 class Day(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     week = models.ForeignKey(Week, on_delete=models.CASCADE,related_name="days")
-    day = models.CharField(default=("Mon","Monday"),choices=weekday_with_class,max_length=10)
+    day = models.CharField(default=("Monday","Monday"),choices=weekday_with_class,max_length=10)
     day_webpage_source= models.CharField(default="test",max_length=50)
     day_description = models.CharField(default="test",max_length=300)
     def __str__(self) -> str:

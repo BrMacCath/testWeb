@@ -15,9 +15,9 @@ def week(request,week_num):
     week= get_object_or_404(Week, week_num=week_num)
     return render(request, "Math_161/Week.html",{"week": week})
 
-def day(request,week_num,day_name,day):
+def day(request,week_num,day):
     week= get_object_or_404(Week, week_num=week_num)
-    context = {"week": week,"week_num":week_num,"day":day,"day_name":day_name}
+    context = {"week": week,"week_num":week_num,"day":day}
     return render(request, "Math_161/Day.html",context=context)
 
 def detail(request, week_id):

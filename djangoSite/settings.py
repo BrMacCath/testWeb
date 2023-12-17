@@ -70,7 +70,7 @@ ROOT_URLCONF = 'djangoSite.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR,'djangoSite/templates'),os.path.join(BASE_DIR,'WebsiteProgress/templates/WebsiteProgress'),os.path.join(BASE_DIR,'Math340/templates/Math340')],
+        'DIRS': [os.path.join(BASE_DIR,'djangoSite/templates'),os.path.join(BASE_DIR,'WebsiteProgress/templates/WebsiteProgress'),os.path.join(BASE_DIR,'Math340/templates/Math340'),os.path.join(BASE_DIR,'Math_161/templates/Math_161')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

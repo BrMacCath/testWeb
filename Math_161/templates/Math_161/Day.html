@@ -1,4 +1,8 @@
 {% extends "base_site.html" %}
 {% block content %}
-<p> Testing this out.</p>
+
+{% with week_num=week.week_num|stringformat:"i" %}
+    {% include ""|add:"Week_"|add:week_num|add:"\\"|add:day|add:".html" %}
+{% endwith %}
+
 {% endblock content %}

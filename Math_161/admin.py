@@ -4,7 +4,7 @@ from django.utils.translation import ngettext
 import random
 # Register your models here.
 
-weekday_with_class=[("Mon","Monday"),("Tue","Tuesday"),("Wed","Wednesday"),("Fri","Friday")]
+weekday_with_class=[("Monday","Monday"),("Tuesday","Tuesday"),("Wednesday","Wednesday"),("Friday","Friday")]
 
 
 

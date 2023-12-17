@@ -19,7 +19,7 @@
             </td>
             {% for day in week.days.all %}
                 <td>
-                    <a href="{% url 'Math_161:day' week_num=week.week_num  day_name=day.day %}"> {{day.day }}</a>
+                    <a href="{% url 'Math_161:day' week_num=week.week_num  day=day %}"> {{day.day }}</a>
                 </td>
             {% endfor %}
             {% if week.quiz_Boolean %}
