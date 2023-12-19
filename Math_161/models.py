@@ -1,6 +1,7 @@
 from django.db import models
 from django.utils import timezone
 from datetime import datetime, timedelta
+
 from django.conf import settings
 import uuid
 
@@ -42,14 +43,9 @@ class Week(models.Model):
     class Meta:
         ordering =["week_num"]
 
-    def get_day(self,day):
-        pass
-
-    def create_week(self):
-        #This will create the day and the html source
-        for day in weekday_with_class:
-            class_day = Day(week=self,day=day[0])
-            class_day.save()
+    def is_published(self):
+        now = timezone.now()
+        return self.pub_date <= now
 
 
 

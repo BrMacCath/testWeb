@@ -13,7 +13,7 @@
         </tr>
         
         {% for week in weeks %}
-        	{% if week.quiz_Boolean %}
+        	{% if week.is_published %}
                 <tr>
                     <td>
                         <a href="{% url 'Math_161:week' week_num=week.week_num %}">Week {{week.week_num}}</a>
@@ -25,11 +25,7 @@
                     {% endfor %}
                     {% if week.quiz_Boolean %}
                         <td>
-                            Quiz
-                            {{quiz_here}}
-                            {% if quiz_here %}
-                                 test
-                            {% endif %}
+                            <a href="{% url 'Math_161:quiz' week_num=week.week_num%}">Quiz</a>
                         </td>
                     {% else %}
                         <td>

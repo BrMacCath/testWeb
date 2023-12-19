@@ -5,9 +5,17 @@ from Math_161.models import Week,Day
 ## Week Tests
 
 # 1. Each instance of a day should appear at most once.
+# This is handled in commands as we need to access model data
+# and you cannot do that in here.
 # 2. If it is a quiz week, the description should not be none.
+# This is handled in commands as we need to access model data
+# and you cannot do that in here.
 # 3. Each week num is unique.
+# This is handled in commands as we need to access model data
+# and you cannot do that in here.
 # 4. Webpage source is not saved at default.
+# This is handled in commands as we need to access model data
+# and you cannot do that in here.
 # 5. Week title is not saved at default
 # 6. There should be a way to check the pub date satifies 
 # pub date cond. Need to figure that one out.
