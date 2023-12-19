@@ -9,7 +9,7 @@
 
 
 {% with week_num=week.week_num|stringformat:"i" %}
-    {% include ""|add:"Week_"|add:week_num|add:"\\"|add:day|add:".html" %}
+    {% include ""|add:"Week_"|add:week_num|add:"/"|add:day|add:".html" %}
 {% endwith %}
 {% include "calcCenter.html" %}
 <h1> Google doc</h1>
