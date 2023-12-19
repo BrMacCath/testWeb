@@ -1,5 +1,5 @@
 from django.test import TestCase
-from .models import Week,Day
+from Math_161.models import Week,Day
 # Create your tests here.
 
 ## Week Tests
@@ -14,12 +14,34 @@ from .models import Week,Day
 # 
 
 class WeekTest(TestCase):
-    # 1. Each instance of a day should appear at most once.
-    def unique_day(self):
-        pass
+
+    def setUp(self):
+        print("This")
+        self.Weeks = Week.objects.all()
+        self.Days = Day.objects.all()
+    # 1. Each instance of a day should appear once a week.
+    def test_unique_day(self):
+        print("Here")
+        
+        print(self.Weeks)
+        for week in Week.objects.all():
+            print("Test")
+        for day in self.Days:
+            count = 0
+            print("Here")
+            for week in self.Weeks:
+                if day.week.week_num == week.week_num:
+                    count += 1
+                    print("Yes")
+            self.assertSetEqual(count,2)
+
 
     # 2. If it is a quiz week, the description should not be none.
-    def quiz_template(self):
+    def test_quiz_template(self):
+        # Weeks = Week.objects.all()
+        # for week in Weeks:
+        #     if week.has_quiz:
+        #         self.assertNotEqual()
         pass
 
     # 3. Each week num is unique.
@@ -48,3 +70,6 @@ class DayTest(TestCase):
     # 1. day description should not be at default.
     def not_default_description(self):
         pass
+
+
+## Quiz Tests

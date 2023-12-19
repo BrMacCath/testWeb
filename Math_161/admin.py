@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Day,Week
+from .models import Day,Week,Quiz
 from django.utils.translation import ngettext
 import random
 # Register your models here.
@@ -66,12 +66,17 @@ class DayInline(admin.TabularInline):
     model = Day
     extra = 0
 
+class QuizInline(admin.TabularInline):
+    model = Quiz
+    extra = 0
+
+
 class WeekAdmin(admin.ModelAdmin):
     fieldsets =[ ("Overall Week Details",{"fields": ["week_num","week_title","week_description","pub_date"]}  ),
                  ("Quiz Details",{"fields": ["quiz_Boolean","quiz_description"]}), ]
     list_display = ["week_num","week_title"]
     actions = [make_published,quiz_week,not_quiz_week]
-    inlines =[DayInline]
+    inlines =[DayInline,QuizInline]
 
 
 admin.site.register(Week,WeekAdmin)

@@ -19,6 +19,16 @@
         </td>
     </tr>
     {% endfor %}
+    {% if quiz_here%}
+        <tr>
+            <td>
+                <a href="{% url 'Math_161:quiz' quiz_num=Quiz.quiz_num %}"> Quiz</a>
+            </td>
+            <td>
+                {{Quiz.description}}
+            </td>
+        </tr>
+    {% endif%}
 
 </table>
 

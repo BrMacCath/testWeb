@@ -13,26 +13,32 @@
         </tr>
         
         {% for week in weeks %}
-        <tr>
-            <td>
-                <a href="{% url 'Math_161:week' week_num=week.week_num %}">Week {{week.week_num}}</a>
-            </td>
-            {% for day in week.days.all %}
-                <td>
-                    <a href="{% url 'Math_161:day' week_num=week.week_num  day=day %}"> {{day.day }}</a>
-                </td>
-            {% endfor %}
-            {% if week.quiz_Boolean %}
-                <td>
-                    Quiz
-                </td>
-            {% else %}
-                <td>
-                    No Quiz
-                </td>
+        	{% if week.quiz_Boolean %}
+                <tr>
+                    <td>
+                        <a href="{% url 'Math_161:week' week_num=week.week_num %}">Week {{week.week_num}}</a>
+                    </td>
+                    {% for day in week.days.all %}
+                        <td>
+                            <a href="{% url 'Math_161:day' week_num=week.week_num  day=day %}"> {{day.day }}</a>
+                        </td>
+                    {% endfor %}
+                    {% if week.quiz_Boolean %}
+                        <td>
+                            Quiz
+                            {{quiz_here}}
+                            {% if quiz_here %}
+                                 test
+                            {% endif %}
+                        </td>
+                    {% else %}
+                        <td>
+                            No Quiz
+                        </td>
+                    {% endif %}
+                    
+                </tr>
             {% endif %}
-            
-        </tr>
         {% endfor %}
 
     </table>

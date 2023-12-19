@@ -68,4 +68,22 @@ class Day(models.Model):
     def __str__(self) -> str:
         return self.day
     
+## The quiz model
+
+# This is going to be the quiz model. 
+#
+# It will contain the week and quiz num.
+# The goal is to have it contain all the info about quizzes 
+# such as quiz files, 
+
+class Quiz(models.Model):
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    week = models.ForeignKey(Week, on_delete=models.CASCADE,related_name="quiz")
+    quiz_num = models.IntegerField(default=0)
+    quiz_prepsheet_source =  models.CharField(default="#",max_length=100)
+    quiz_here = models.BooleanField(default=False)
+    quiz_here_source =  models.CharField(default="#",max_length=100)
+    description= models.CharField(default="None",max_length=20)
+
+
 
