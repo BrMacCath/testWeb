@@ -2,7 +2,7 @@
 {% block content %}
 
 {% with week_num=week.week_num|stringformat:"i" %}
-    {% include ""|add:"Week_"|add:week_num|add:"\\Week.html" %}
+    {% include ""|add:"Week_"|add:week_num|add:"/Week.html" %}
 {% endwith %}
 <table>
     <tr>

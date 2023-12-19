@@ -48,6 +48,9 @@ def quiz(request,quiz_num):
 
 class QuizView(generic.DetailView):
     model = Quiz
+    slug_field = "emp_no"
+    slug_url_kwarg = "emp_no"
+    
     context_object_name= "quiz"
 #     def get_context_data(self, **kwargs):
 #         context = super(generic.DetailView, self).get_context_data(**kwargs)

@@ -5,7 +5,7 @@
 <h2> Here</h2>
 <!-- Need to Automatically get script from html template.  -->
 {% with week_num=week.week_num|stringformat:"i" %}
-    {{""|add:"Week_"|add:week_num|add:"\\Quiz".html" }}
+    {{""|add:"Week_"|add:week_num|add:"/Quiz".html" }}
 {% endwith %}
 <!-- Get The worksheet Prep -->
 
