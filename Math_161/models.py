@@ -43,6 +43,7 @@ class Week(models.Model):
     class Meta:
         ordering =["week_num"]
 
+    @property
     def is_published(self):
         now = timezone.now()
         return self.pub_date <= now

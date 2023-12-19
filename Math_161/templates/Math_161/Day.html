@@ -4,11 +4,9 @@
 <h2>Today's worksheet</h2>
 {% load static %}
 
-{% for x in worksheet_source %}
-{% if x.week.week_num == week_num%}
-<p>Todays worksheet can be found <a href="{{ x.day_worksheet_source}}">here</a> </p>
-{%endif%}
-{% endfor %}
+
+<p>Todays worksheet can be found <a href="{{worksheet_source}}">here</a> </p>
+
 
 {% with week_num=week.week_num|stringformat:"i" %}
     {% include ""|add:"Week_"|add:week_num|add:"\\"|add:day|add:".html" %}

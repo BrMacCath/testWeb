@@ -5,7 +5,7 @@ from django.urls import reverse
 from django.views import generic
 from .models import Week,Day,Quiz
 from django.shortcuts import get_object_or_404, render
-
+from django.utils import timezone
 def index(request):
     Weeks = Week.objects.all()
     context = {"weeks":Weeks}
@@ -21,22 +21,40 @@ def week(request,week_num):
         if q.week.week_num == week.week_num:
             Quiz_here = True
             Qui = q
-    if week.quiz_Boolean:
-        return render(request, "Math_161/Week.html",{"week": week,"Quiz":Qui,"quiz_here":Quiz_here})
+    if week.is_published:
+        return render(request, "Math_161/Week.html",{"week": week,"Quiz":week.quiz.get(),"quiz_here":Quiz_here})
     else:
         return render(request, "Math_161/not_published.html")
 
 def day(request,week_num,day):
     week= get_object_or_404(Week, week_num=week_num)
-    if week.quiz_Boolean:
-        tempDay= Day.objects.filter(day=day).prefetch_related("week")
-        # tempDay = tempDay.objects.get(week_num=week_num)
-        context = {"week": week,"week_num":week_num,"day":day,"worksheet_source":tempDay}
+    for days in week.days.all():
+        if days.__str__() == day:
+            worksheet_source = days.day_worksheet_source
+    if week.is_published:
+        context = {"week": week,"week_num":week_num,"day":day,"worksheet_source":worksheet_source}
         return render(request, "Math_161/Day.html",context=context)
     else:
         return render(request, "Math_161/not_published.html")
 
+# class DayView(generic.DetailView):
+#     model=Day
+#     context_object_name=
+
 def quiz(request,quiz_num):
     quiz= get_object_or_404(Quiz, quiz_num=quiz_num)
-    return render(request,"Math_161/quiz.html",{"quiz":quiz})
+    return render(request,"Math_161/Quiz.html",{"quiz":quiz})
 
+
+class QuizView(generic.DetailView):
+    model = Quiz
+    context_object_name= "quiz"
+#     def get_context_data(self, **kwargs):
+#         context = super(generic.DetailView, self).get_context_data(**kwargs)
+#         context["week_num"]=
+
+class IndexView(generic.ListView):
+    now = timezone.now()
+    queryset= Week.objects.filter(pub_date__lt=now)
+    context_object_name = "weeks"
+    template_name="Math_161\index.html"
