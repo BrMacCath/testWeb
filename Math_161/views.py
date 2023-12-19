@@ -57,4 +57,4 @@ class IndexView(generic.ListView):
     now = timezone.now()
     queryset= Week.objects.filter(pub_date__lt=now)
     context_object_name = "weeks"
-    template_name="Math_161\index.html"
+    template_name="Math_161/index.html"
