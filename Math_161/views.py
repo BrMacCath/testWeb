@@ -41,16 +41,19 @@ def day(request,week_num,day):
 #     model=Day
 #     context_object_name=
 
-def quiz(request,quiz_num):
-    quiz= get_object_or_404(Quiz, quiz_num=quiz_num)
-    return render(request,"Math_161/Quiz.html",{"quiz":quiz})
+def quiz(request,week_num):
+    quiz_Week = Week.objects.get(week_num=week_num)
+    quiz= quiz_Week.quiz
+    context = {"quiz":quiz,"week_num":week_num}
+    return render(request,"Math_161/Quiz.html",context=context)
 
 
 class QuizView(generic.DetailView):
     model = Quiz
     slug_field = "emp_no"
-    slug_url_kwarg = "emp_no"
+    slug_url_kwarg = "week_num"
     context_object_name= "quiz"
+    template_name = "Math_161/Quiz.html"
 #     def get_context_data(self, **kwargs):
 #         context = super(generic.DetailView, self).get_context_data(**kwargs)
 #         context["week_num"]=
