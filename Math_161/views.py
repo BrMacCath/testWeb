@@ -22,7 +22,11 @@ def week(request,week_num):
             Quiz_here = True
             Qui = q
     if week.is_published:
-        return render(request, "Math_161/Week.html",{"week": week,"Quiz":week.quiz.get(),"quiz_here":Quiz_here})
+        if week.quiz_Boolean:
+            context = {"week": week,"Quiz":week.quiz.get(),"quiz_here":Quiz_here}
+        else:
+            context ={"week": week }
+        return render(request, "Math_161/Week.html",context=context)
     else:
         return render(request, "Math_161/not_published.html")
 
