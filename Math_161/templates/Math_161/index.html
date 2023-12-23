@@ -1,6 +1,5 @@
 {% extends "base_site.html" %}
 {% block content %}
-
 {% if weeks %}
     <table>
         <tr>
@@ -11,7 +10,6 @@
             <th>Friday</th>
             <th>Quiz</th>
         </tr>
-        
         {% for week in weeks %}
         	{% if week.is_published %}
                 <tr>
@@ -29,16 +27,12 @@
                         </td>
                     {% else %}
                         <td>
-                            No Quiz
+                            Exam Week
                         </td>
                     {% endif %}
-                    
                 </tr>
             {% endif %}
         {% endfor %}
-
     </table>
-
 {% endif %}
-
 {% endblock content %}

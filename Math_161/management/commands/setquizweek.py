@@ -11,7 +11,8 @@ class Command(BaseCommand):
             week.quiz_Boolean = False
         for week in Week.objects.all():
             for quiz in Quiz.objects.all():
-                if quiz.week.week_num == week.week_num:
+                if quiz.week == week:
                     week.quiz_Boolean = True
+                    week.save()
                     print(f"Week {week.week_num} has a quiz")
                     break

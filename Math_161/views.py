@@ -18,7 +18,7 @@ def week(request,week_num):
     Quiz_here = False
     Qui = None
     for q in quiz:
-        if q.week.week_num == week.week_num:
+        if q.week == week:
             Quiz_here = True
             Qui = q
     if week.is_published:
