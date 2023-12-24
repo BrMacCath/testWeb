@@ -62,6 +62,8 @@ class Day(models.Model):
     day = models.CharField(default=("Monday","Monday"),choices=weekday_with_class,max_length=10)
     day_worksheet_source= models.CharField(default="#",max_length=100)
     day_description = models.CharField(default="test",max_length=300)
+    day_Slides_Boolean = models.BooleanField(default=False)
+    day_Slides_Source = models.CharField(default="test",max_length=30)
     def __str__(self) -> str:
         return self.day
     

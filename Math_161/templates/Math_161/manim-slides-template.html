@@ -1,0 +1,16 @@
+<h2>Today's slides</h2>
+{% load static %}
+<div style="position:relative;padding-bottom:56.25%;">
+    <!-- 56.25 comes from aspect ratio of 16:9, change this accordingly -->
+    <iframe
+        style="width:80%;height:80%;position:absolute;left:0px;top:0px;"
+        frameborder="0"
+        width="80%"
+        height="40%"
+        allowfullscreen
+        allow="autoplay"
+        {% with week_num=week.week_num|stringformat:"i" %}
+        src='{% static "Week_"|add:week_num|add:"/"|add:Day.day_Slides_Source|add:".html" %}'
+        {% endwith %}>
+    </iframe>
+</div>
