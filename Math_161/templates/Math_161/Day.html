@@ -8,13 +8,14 @@
 <p>Todays worksheet can be found <a href="{{worksheet_source}}">here</a> </p>
 
 
+{% if Day.day_Slides_Boolean %}
+    {% include "manim-slides-template.html" %}
+{% endif%}
+
 {% with week_num=week.week_num|stringformat:"i" %}
     {% include ""|add:"Week_"|add:week_num|add:"/"|add:day|add:".html" %}
 {% endwith %}
 
-{% if Day.day_Slides_Boolean %}
-    {% include "manim-slides-template.html" %}
-{% endif%}
 {% include "calcCenter.html" %}
 <h1> Google doc</h1>
 <p>What <a href ="https://docs.google.com/forms/d/e/1FAIpQLScsBDMvX1j9QRg39nZHnhx9xXN5qIEDn3KZTJ1VBf1g-jh4oQ/viewform?usp=sf_link">suggestions</a> do you have?</p>
