@@ -17,7 +17,7 @@ class Command(BaseCommand):
     def handle(self, *args: Any, **options: Any) -> str | None:
         weeks = Week.objects.all().order_by("week_num")
         days=12
-        startOfYear = datetime.datetime(2024,1,days)
+        startOfYear = datetime.datetime(2024,1,days,12)
         for week in weeks:
             print("Here")
             week.pub_date = startOfYear
