@@ -47,10 +47,13 @@ def day(request,week_num,day):
 #     context_object_name=
 
 def quiz(request,week_num):
-    quiz_Week = Week.objects.get(week_num=week_num)
-    quiz= quiz_Week.quiz
-    context = {"quiz":quiz,"week_num":week_num}
-    return render(request,"Math_161/Quiz.html",context=context)
+    week= get_object_or_404(Week, week_num=week_num)
+    quiz = week.quiz.all()[0]
+    if week.is_published:
+        context = {"quiz":quiz,"week_num":week_num}
+        return render(request,"Math_161/Quiz.html",context=context)
+    else:
+        return render(request, "Math_161/not_published.html")
 
 
 class QuizView(generic.DetailView):

@@ -83,6 +83,8 @@ class Quiz(models.Model):
     quiz_here = models.BooleanField(default=False)
     quiz_here_source =  models.CharField(default="#",max_length=100)
     description= models.CharField(default="None",max_length=20)
+    Rubric_source =  models.CharField(default="#",max_length=100)
+
 
 
 

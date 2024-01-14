@@ -1,8 +1,9 @@
 from typing import Any
 from django.core.management.base import BaseCommand, CommandError, no_translations
 from Math_161.models import Week,Day,Quiz
-import numpy as np
 import datetime
+import pytz
+from django.utils import timezone
 weekday_with_class=["Monday","Tuesday","Wednesday","Friday"]
 
 ## Correct Structure
@@ -17,9 +18,8 @@ class Command(BaseCommand):
     def handle(self, *args: Any, **options: Any) -> str | None:
         weeks = Week.objects.all().order_by("week_num")
         days=12
-        startOfYear = datetime.datetime(2024,1,days,12)
+        startOfYear = datetime.datetime(2024,1,days,12,tzinfo=pytz.UTC)
         for week in weeks:
-            print("Here")
             week.pub_date = startOfYear
             week.save()
             days +=7
