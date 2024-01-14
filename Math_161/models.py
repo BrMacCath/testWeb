@@ -82,8 +82,19 @@ class Quiz(models.Model):
     quiz_prepsheet_source =  models.CharField(default="#",max_length=100)
     quiz_here = models.BooleanField(default=False)
     quiz_here_source =  models.CharField(default="#",max_length=100)
-    description= models.CharField(default="None",max_length=20)
+    description= models.CharField(default="None",max_length=40)
     Rubric_source =  models.CharField(default="#",max_length=100)
+    release_answers_date =  models.DateTimeField(default=datetime.now, blank=True)
+    quiz_answer_source =  models.CharField(default="#",max_length=100)
+
+    class Meta:
+        ordering =["quiz_num"]
+
+    @property
+    def release_answer_key(self):
+        now = timezone.now()
+        return self.release_answers_date <= now
+
 
 
 

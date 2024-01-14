@@ -22,5 +22,4 @@ class Command(BaseCommand):
         for week in weeks:
             week.pub_date = startOfYear
             week.save()
-            days +=7
             startOfYear = startOfYear +datetime.timedelta(days=7)

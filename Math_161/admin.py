@@ -78,5 +78,14 @@ class WeekAdmin(admin.ModelAdmin):
     actions = [make_published,quiz_week,not_quiz_week]
     inlines =[DayInline,QuizInline]
 
+class QuizAdmin(admin.ModelAdmin):
+    fieldsets =[ ("Quiz Identification",{"fields": ["quiz_num"]}  ),
+                 ("Quiz Preparation",{"fields": ["description","Rubric_source"]}), 
+                 ("Quiz Review",{"fields":["release_answers_date","quiz_answer_source","quiz_here_source"]}) ]
+    list_display = ["quiz_num","description","release_answers_date","release_answer_key"]
+
+
+
 
 admin.site.register(Week,WeekAdmin)
+admin.site.register(Quiz,QuizAdmin)
