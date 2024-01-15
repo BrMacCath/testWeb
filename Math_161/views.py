@@ -4,6 +4,7 @@ from django.template import loader
 from django.urls import reverse
 from django.views import generic
 from .models import Week,Day,Quiz
+import datetime
 from django.shortcuts import get_object_or_404, render
 from django.utils import timezone
 def index(request):
@@ -42,9 +43,7 @@ def day(request,week_num,day):
     else:
         return render(request, "Math_161/not_published.html")
 
-# class DayView(generic.DetailView):
-#     model=Day
-#     context_object_name=
+
 
 def quiz(request,week_num):
     week= get_object_or_404(Week, week_num=week_num)
@@ -71,3 +70,9 @@ class IndexView(generic.ListView):
     queryset= Week.objects.filter(pub_date__lt=now)
     context_object_name = "weeks"
     template_name="Math_161/index.html"
+
+class QuizListView(generic.ListView):
+    now = datetime.datetime.now()
+    queryset = Quiz.objects.filter(week__pub_date__lt=now)
+    context_object_name="Quizzes"
+    template_name="Math_161/QuizList.html"

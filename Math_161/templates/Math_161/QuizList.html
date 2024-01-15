@@ -1,0 +1,16 @@
+{% extends "base_site.html" %}
+{% block content %}
+<table>
+    <tr>
+        <th>Quiz Number</th>
+        <th>Quiz Description</th>
+    </tr>
+    {% for quiz in Quizzes %}
+        <tr>
+            <td><a href="{% url 'Math_161:quiz' week_num=quiz.week.week_num%}">Quiz {{quiz.quiz_num}}</a> </td>
+            <td>{{quiz.description}}</td>
+        </tr>
+    {%endfor%}
+</table>
+
+{% endblock content %}

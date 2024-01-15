@@ -2,7 +2,8 @@ from typing import Any
 from django.core.management.base import BaseCommand, CommandError, no_translations
 from Math_161.models import Week,Day,Quiz
 import numpy as np
-
+import pytz
+import datetime
 weekday_with_class=["Monday","Tuesday","Wednesday","Friday"]
 
 ## Correct Structure
@@ -14,6 +15,7 @@ class Command(BaseCommand):
     help = "Makes sure each week is done structured correctly."
     @no_translations
     def handle(self, *args: Any, **options: Any) -> str | None:
+        ## This focuses on the Day part of the week.
         # The first part of this is checking that each day appears once 
         # per week
         total_weeks =Week.objects.all().count()
@@ -39,6 +41,24 @@ class Command(BaseCommand):
                 correct_number = False
                 print(f"Week {week.week_num} has {week.days.all().count()} days.")
         print(correct_named_days and correct_number) 
+
+        ## This part works on the Quiz structure
+        # This is to make sure that each quiz is dated correctly.
+        # It adds 7 days to the release Date irrespective of whether 
+        # a quiz is added or not.
+        releaseDate = datetime.datetime(2024,1,21,9,tzinfo=pytz.UTC)
+        for week in Week.objects.all():
+            week.quiz_Boolean = False
+        for week in Week.objects.all():
+            for quiz in Quiz.objects.all():
+                if quiz.week == week:
+                    week.quiz_Boolean = True
+                    week.save()
+                    quiz.release_answers_date= releaseDate
+                    quiz.save()
+                    print(f"Week {week.week_num} has a quiz. The answer key will be released on {quiz.release_answers_date}.")
+                    break
+            releaseDate = releaseDate +datetime.timedelta(days=7)
 
 
         

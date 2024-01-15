@@ -9,5 +9,5 @@ urlpatterns = [
     path("Week_<int:week_num>", views.week, name="week"),
     path("Week_<int:week_num>/Quiz", views.quiz, name="quiz"),
     path("Week_<int:week_num>/<str:day>", views.day, name="day"),
-    
+    path("QuizList",views.QuizListView.as_view(),name="QuizList"),
 ]

@@ -21,5 +21,3 @@ class Command(BaseCommand):
             new_week.days.create(week=new_week,day=day)
         new_week.save()
         print("Created a new week instance.")
-
-        pass

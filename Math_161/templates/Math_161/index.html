@@ -1,5 +1,6 @@
 {% extends "base_site.html" %}
 {% block content %}
+<h1>Structure of Course</h1>
 {% if weeks %}
     <table>
         <tr>
@@ -23,7 +24,7 @@
                     {% endfor %}
                     {% if week.quiz_Boolean %}
                         <td>
-                            <a href="{% url 'Math_161:quiz' week_num=week.week_num%}">Quiz</a>
+                            <a href="{% url 'Math_161:quiz' week_num=week.week_num%}">Quiz</a> 
                         </td>
                     {% else %}
                         <td>
@@ -35,4 +36,7 @@
         {% endfor %}
     </table>
 {% endif %}
+
+<h1>Previous Quizzes List</h1>
+<a href="{% url 'Math_161:QuizList'%}">Here</a> is a link to all the previous quizzes for reference.
 {% endblock content %}
