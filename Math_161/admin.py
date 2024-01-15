@@ -81,7 +81,7 @@ class WeekAdmin(admin.ModelAdmin):
 class QuizAdmin(admin.ModelAdmin):
     fieldsets =[ ("Quiz Identification",{"fields": ["quiz_num"]}  ),
                  ("Quiz Preparation",{"fields": ["description","Rubric_source"]}), 
-                 ("Quiz Review",{"fields":["release_answers_date","quiz_answer_source","quiz_here_source"]}) ]
+                 ("Quiz Review",{"fields":["release_answers_date","quiz_here_source","quiz_answer_source"]}) ]
     list_display = ["quiz_num","description","release_answers_date","release_answer_key"]
 
 
