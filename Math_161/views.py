@@ -17,11 +17,9 @@ def week(request,week_num):
     # Check if there is a quiz linked into this week
     quiz = Quiz.objects.all().prefetch_related("week")
     Quiz_here = False
-    Qui = None
     for q in quiz:
         if q.week == week:
             Quiz_here = True
-            Qui = q
     if week.is_published:
         if week.quiz_Boolean:
             context = {"week": week,"Quiz":week.quiz.get(),"quiz_here":Quiz_here}
@@ -43,13 +41,25 @@ def day(request,week_num,day):
     else:
         return render(request, "Math_161/not_published.html")
 
-
-
 def quiz(request,week_num):
+    now = datetime.datetime.now()
     week= get_object_or_404(Week, week_num=week_num)
     quiz = week.quiz.all()[0]
+    previous_quiz = None
+    next_quiz = None
+    quiz_total = Quiz.objects.filter(week__pub_date__lt=now).count()
+    # There is no previous quiz if it is the first one.
+    if quiz.quiz_num > 1:
+        if quiz.week.is_published:
+            previous_quiz = Quiz.objects.filter(quiz_num=quiz.quiz_num-1,week__pub_date__lt=now)[0]
+        else:
+            return render(request, "Math_161/not_published.html")
+
+    if quiz.quiz_num < quiz_total:
+        if Quiz.objects.filter(quiz_num=quiz.quiz_num+1,week__pub_date__lt=now) != None:
+            next_quiz= Quiz.objects.filter(quiz_num=quiz.quiz_num+1,week__pub_date__lt=now)[0]
     if week.is_published:
-        context = {"quiz":quiz,"week_num":week_num}
+        context = {"quiz":quiz,"week_num":week_num,"previous_quiz":previous_quiz,"next_quiz":next_quiz,"quiz_total":quiz_total}
         return render(request,"Math_161/Quiz.html",context=context)
     else:
         return render(request, "Math_161/not_published.html")

@@ -18,5 +18,18 @@ Here is the <a href="{{quiz.quiz_here_source}}">Quiz</a> we had.
 Here is the <a href="{{quiz.quiz_answer_source}}">Answer key</a>.
 
 {% endif %}
+<br/>
+<br/>
+<hr>
+{% if previous_quiz %}
+    <a href="{% url 'Math_161:quiz' week_num=previous_quiz.week.week_num%}">&laquo; Previous Quiz</a> 
+{%endif%}
+
+Quiz {{quiz.quiz_num}} out of {{quiz_total}}
+
+{% if next_quiz %}
+    <a href="{% url 'Math_161:quiz' week_num=next_quiz.week.week_num%}"> Next Quiz &raquo;</a> 
+{%endif%}
+
 
 {% endblock content %}
