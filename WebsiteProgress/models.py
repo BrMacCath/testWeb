@@ -11,5 +11,7 @@ class Phase(models.Model):
     phase_description = models.CharField(max_length=100,default="Not yet.") 
     def __str__(self):
         return self.title_text
+    class Meta:
+        ordering = ['weight']
     
     

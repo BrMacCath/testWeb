@@ -49,6 +49,20 @@
 .topnav a.active:hover {
     background-color: red;
 }
+.topnav div.login, .topnav div.login a {
+    float:right;
+    color: #f2f2f2;
+    text-align: center;
+    text-decoration: none;
+    font-size: 17px;
+    margin-right: 0;
+}
+
+.topnav div.login span{
+    float: right;
+    padding: 14px 16px;
+}
+
 
 
 .dropdown {
