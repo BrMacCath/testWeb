@@ -11,5 +11,9 @@
         {% endfor %}
       </div>
     </div>
+    {% if request.user.is_authenticated %}
+    <span>Hello {{request.user}}</span>
+    <a href="#"> Logout</a>
+    {%endif %}
   </div>
   
