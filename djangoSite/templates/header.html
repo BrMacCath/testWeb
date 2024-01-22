@@ -13,12 +13,13 @@
     </div>
     {% if request.user.is_authenticated %}
     <div class="login">
+        <a href="{% url 'profile' %}" id="profile"> Profile</a>
         <span>Hello {{request.user}}</span>
         <a href="#" id="log"> Logout</a>
     </div>
     {% else %}
     <div class="login">
-      <a href="#" id="log"> Login</a>
+      <a href="{% url 'profile' %}" id="log"> Login</a>
   </div>
     {%endif %}
   </div>
