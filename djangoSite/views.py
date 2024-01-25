@@ -49,7 +49,7 @@ def loginPage(request):
     context={}
     return render(request,"accounts/login.html")
 
-@unauthenticated_user
+# @unauthenticated_user
 def profilePage(request):
     context={}
     return render(request,"accounts/profile.html")

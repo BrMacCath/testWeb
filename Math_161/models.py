@@ -34,7 +34,7 @@ class Week(models.Model):
     week_webpage_source= models.CharField(default="test",max_length=50)
     week_title = models.CharField(default="test",max_length=300)
     week_description = models.CharField(default="test",max_length=300)
-    pub_date = models.DateTimeField("date published")
+    pub_date = models.DateTimeField(default=datetime.now, blank=True)
 
     # This is for the weeks where there are quizzes
     quiz_Boolean = models.BooleanField(default=False)

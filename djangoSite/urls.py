@@ -23,14 +23,14 @@ urlpatterns = [
     path("", views.index, name="index"),
     path("contact/", views.contact, name="contact"),
     path("register/", views.registerPage, name="contact"),
-    path("login/", views.loginPage, name="login"),
+    path("login/", views.loginPage, name="log"),
     path("profile/", views.loginPage, name="profile"),
     path('WebsiteProgress/',include("WebsiteProgress.urls")),
     path('admin/', admin.site.urls),
     path('LeavingCert/',include("LeavingCert.urls")),
     path('Misc/',include("Misc.urls")),
     path('Math_161/',include("Math_161.urls")),
-    path("account/", include('django.contrib.auth.urls'))
+    path("accounts/", include('django.contrib.auth.urls'))
 ]
 
 # if settings.DEBUG:
