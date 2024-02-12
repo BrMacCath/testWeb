@@ -35,6 +35,7 @@ class Command(BaseCommand):
             week.quiz_Boolean = False
         
         #  Set the release date to the correct ones
+        #  Have exam structure here too 
         for week in Week.objects.all():
             for quiz in Quiz.objects.all():
                 if quiz.week == week:
@@ -44,4 +45,9 @@ class Command(BaseCommand):
                     quiz.save()
                     print(f"Week {week.week_num} has a quiz. The answer key will be released on {quiz.release_answers_date}.")
                     break
+
+            # Here if there is not quiz, put exam week here instead
+            # if not week.quiz_Boolean
+            # Check that it has an exam structure and then set the
+            # data for the exam to be that week.
             releaseDate = releaseDate +datetime.timedelta(days=7)
