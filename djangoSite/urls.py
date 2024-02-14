@@ -22,7 +22,7 @@ from django.conf.urls.static import static
 urlpatterns = [
     path("", views.index, name="index"),
     path("contact/", views.contact, name="contact"),
-    path("register/", views.registerPage, name="contact"),
+    path("register/", views.registerPage, name="register"),
     path("login/", views.loginPage, name="log"),
     path("profile/", views.loginPage, name="profile"),
     path('WebsiteProgress/',include("WebsiteProgress.urls")),
