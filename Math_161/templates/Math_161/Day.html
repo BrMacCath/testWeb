@@ -3,10 +3,11 @@
 <h1>Notes about today</h1>
 <h2>Today's worksheet</h2>
 {% load static %}
-
-
-<p>Todays worksheet can be found <a href="{{worksheet_source}}">here</a> </p>
-
+{% if worksheet_source == "#" %}
+    <p>No worksheet made for today.</p>
+{% else %}
+<p>Todays worksheet can be found <a href="{{worksheet_source}}">here.</a> </p>
+{% endif%}
 
 {% if Day.day_Slides_Boolean %}
     {% include "manim-slides-template.html" %}
