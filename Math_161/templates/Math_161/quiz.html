@@ -6,7 +6,12 @@
 {% endwith %}
 <!-- Get The worksheet Prep -->
 <h2>Rubric that will be used</h2>
+{% if quiz.Rubric_source == "#" %}
+    <p>The Rubric has not been uploaded yet.</p>
+{% else %}
 <p>The rubric for the quiz can be found <a href="{{quiz.Rubric_source}}">here.</a></p>
+{% endif%}
+
 
 <!-- Actual quiz if it is there -->
 {% if quiz.release_answer_key %}
