@@ -15,12 +15,16 @@
 
 <!-- Actual quiz if it is there -->
 {% if quiz.release_answer_key %}
-
-    <h2>The quiz</h2>
-    Here is the <a href="{{quiz.quiz_here_source}}">Quiz</a> we had.
-
-    <h2>The answer key</h2>
-    Here is the <a href="{{quiz.quiz_answer_source}}">Answer key</a>.
+    {%if quiz.Rubric_source == "#"%}
+        <h2>Quiz Notes </h2>
+        <p>The quiz and answer key have not been uploaded yet.</p>
+    {%else%}
+        <h2>The quiz</h2>
+        Here is the <a href="{{quiz.quiz_here_source}}">Quiz</a> we had.
+        
+        <h2>The answer key</h2>
+        Here is the <a href="{{quiz.quiz_answer_source}}">Answer key</a>.
+    {%endif%}
 {% endif %}
 <br/>
 <br/>
