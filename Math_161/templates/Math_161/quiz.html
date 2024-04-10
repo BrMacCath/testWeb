@@ -4,6 +4,10 @@
 {% with week_num=week_num|stringformat:"i" %}
     {% include ""|add:"Week_"|add:week_num|add:"/Quiz.html" %}
 {% endwith %}
+
+<h1> Quiz {{quiz.quiz_num}}</h1>
+
+
 <!-- Get The worksheet Prep -->
 <h2>Rubric that will be used</h2>
 {% if quiz.Rubric_source == "#" %}
@@ -15,13 +19,16 @@
 
 <!-- Actual quiz if it is there -->
 {% if quiz.release_answer_key %}
-    {%if quiz.Rubric_source == "#"%}
+    {%if quiz.quiz_here_source == "#"%}
         <h2>Quiz Notes </h2>
-        <p>The quiz and answer key have not been uploaded yet.</p>
+        <p>The quiz has not been uploaded yet.</p>
     {%else%}
-        <h2>The quiz</h2>
+
+        <h2>The Quiz</h2>
         Here is the <a href="{{quiz.quiz_here_source}}">Quiz</a> we had.
-        
+    {%endif%}  
+
+    {%if quiz.quiz_answer_source != "#"%}
         <h2>The answer key</h2>
         Here is the <a href="{{quiz.quiz_answer_source}}">Answer key</a>.
     {%endif%}

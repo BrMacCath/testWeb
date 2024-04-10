@@ -68,6 +68,7 @@ class DayInline(admin.TabularInline):
 
 class QuizInline(admin.TabularInline):
     model = Quiz
+    list_display = ["quiz_num"]
     extra = 0
 
 

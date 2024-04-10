@@ -30,7 +30,7 @@ class Command(BaseCommand):
         #  Make sure weeks that have quizzes have 
         #  quiz_Boolean set to True and all others 
         #  are false.
-        releaseDate = datetime.datetime(2024,1,20,9,tzinfo=pytz.UTC)
+        releaseDate = datetime.datetime(2024,1,27,9,tzinfo=pytz.UTC)
         for week in Week.objects.all():
             week.quiz_Boolean = False
         
