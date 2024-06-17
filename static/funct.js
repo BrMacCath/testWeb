@@ -1,11 +1,20 @@
-function myFunction() {
-    var fixButtons = document.querySelectorAll("li.has-sub-menu a span");
-
-    fixButtons.forEach(t => {
-        t.addEventListener("click", function(){
-        t.innerHTML = "-";
-        }
-        )
+(function ($) {
+  $(document).ready(function () {
+    $(".has-sub-menu > a span.mark").on("click", function (e) {
+      $(this)
+        .parent()
+        .siblings("ul")
+        .slideToggle("fast", "swing", function () {
+          var text = "";
+          if ($(this).is(":visible")) {
+            text = "-";
+          } else {
+            text = "+";
+          }
+          $(this).siblings("a").children("span.mark").text(text);
+        });
+      e.preventDefault();
     });
-}
+  });
+})(jQuery);
 // https://www.w3schools.com/howto/howto_js_display_checkbox_text.asp

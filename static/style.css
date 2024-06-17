@@ -1,227 +1,234 @@
-*{
-    margin:0px;
-    white-space: initial;
+* {
+  margin: 0px;
+  white-space: initial;
 }
-.content table{
-    width: 90%;
+.content table {
+  width: 90%;
 }
-.content th{
-    background: #eee;
-    font-weight: 700;
-    text-align: left;
+.content th {
+  background: #eee;
+  font-weight: 700;
+  text-align: left;
 }
-.content table,.content th,.content td {
-    border-right: 1px solid #f0f0f0;
-    border-top: 1px solid #f0f0f0;
-    border-left: 1px solid #f0f0f0;
-    border-bottom: 1px solid #f0f0f0;
-    padding: 0.6rem;
-    border-collapse: collapse;
+.content table,
+.content th,
+.content td {
+  border-right: 1px solid #f0f0f0;
+  border-top: 1px solid #f0f0f0;
+  border-left: 1px solid #f0f0f0;
+  border-bottom: 1px solid #f0f0f0;
+  padding: 0.6rem;
+  border-collapse: collapse;
 }
-.topnav{
-    display: flex;
-    background-color: #333;
-    top:0px;
-    left: 0px;
-    height: 48px;
-    margin: 0;
-    margin-left: 0px;
-    margin-right: 0;
-    width:100%;
-    position: fixed;
+.topnav {
+  display: flex;
+  background-color: #333;
+  top: 0px;
+  left: 0px;
+  height: 48px;
+  margin: 0;
+  margin-left: 0px;
+  margin-right: 0;
+  width: 100%;
+  position: fixed;
 }
-  /* Style the links inside the navigation bar */
+/* Style the links inside the navigation bar */
 .topnav a {
-    float: left;
-    color: #f2f2f2;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 17px;
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+.topnav div.login {
+  float: right;
 }
 /* Change the color of links on hover */
 .topnav a:hover {
-    background-color: red;
-    text-decoration: underline;
+  background-color: red;
+  text-decoration: underline;
 }
 
-  /* Add a color to the active/current link */
+/* Add a color to the active/current link */
 
-.topnav a.active:hover {
-    background-color: red;
+.topnav div.login,
+.topnav div div.login a {
+  float: right;
+  color: #f2f2f2;
+  text-align: center;
+  text-decoration: none;
+  font-size: 17px;
+  margin-right: 0;
 }
-.topnav div.login, .topnav div.login a {
-    float:right;
-    color: #f2f2f2;
-    text-align: center;
-    text-decoration: none;
-    font-size: 17px;
-    margin-right: 0;
+.topnav div.right {
+  float: right;
+  color: #f2f2f2;
+  text-align: center;
+  text-decoration: none;
+  font-size: 17px;
+  margin-right: 0;
 }
 /* Make two containers that float different ways to each other. https://stackoverflow.com/questions/10994515/float-left-and-right */
-.topnav div.login span{
-    float: right;
-    padding: 14px 16px;
+.topnav div.login span {
+  float: right;
+  padding: 14px 16px;
 }
 
-
-
 .dropdown {
-    float: left;
-  }
+  float: left;
+}
 
 .dropdown .dropbtn {
-font-size: 16px;  
-border: none;
-outline: none;
-color: white;
-padding: 14px 16px;
-background-color: inherit;
-font-family: inherit;
-margin: 0;
+  font-size: 16px;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
 }
 
 .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9d5;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-  }
-
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9d5;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
 
 .dropdown-content a {
-    float: none;
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-    text-align: left;
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
 }
-  
+
 .dropdown-content a:hover {
-background-color: #ddd;
-text-decoration: underline;
+  background-color: #ddd;
+  text-decoration: underline;
 }
 
 .dropdown:hover .dropdown-content {
-display: block;
-margin-top: 48px;
+  display: block;
+  margin-top: 48px;
 }
 
-.dropdown:hover .dropbtn {
-    background-color: red;
-    text-decoration: underline;
-}
-h1,h2,p,ul,table{
-    padding-bottom: 10px;
-} 
-
-
-
-li.has-sub-menu>a span{
-    display: inline-block;
-    height: 32px;
-    line-height: 2;
-    position: absolute;
-    right: 10px;
-    text-align: center;
-    top: 0;
-    width: 32px;
-    background: #f2f2f2;
-    border-left: 1px solid #e7e7e7;
-    color: #979797;
+h1,
+h2,
+p,
+ul,
+table {
+  padding-bottom: 10px;
 }
 
-.main-container{
-    margin-top: 48px;
+li.has-sub-menu > a span {
+  display: inline-block;
+  height: 32px;
+  line-height: 2;
+  position: absolute;
+  right: 10px;
+  text-align: center;
+  top: 0;
+  width: 32px;
+  background: #f2f2f2;
+  border-left: 1px solid #e7e7e7;
+  color: #979797;
 }
-.content{
-    padding-top: 15px;
-    margin-left: 260px;
+
+.main-container {
+  margin-top: 48px;
 }
-.sidenav-container{
-    background-color: #ffffff;
-    width: 220px; 
-    overflow-x: hidden;    
-    margin-left: 0;
-    margin-top: 0;
-    position: fixed;
+.content {
+  padding-top: 15px;
+  margin-left: 260px;
 }
-.sidenav{
-    width: 220px; 
-    display: block;
-    overflow: visible;
+.sidenav-container {
+  background-color: #ffffff;
+  width: 220px;
+  overflow-x: hidden;
+  margin-left: 0;
+  margin-top: 0;
+  position: fixed;
+}
+.sidenav {
+  width: 220px;
+  display: block;
+  overflow: visible;
 }
 .scroller {
-    height: 100%;
-    width: 240px;
-    overflow-y:scroll;
-    overflow-x: hidden;
+  height: 100%;
+  width: 240px;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 
-.sidenav ul{
-    list-style: none;
-    padding-left: 0;
+.sidenav ul {
+  list-style: none;
+  padding-left: 0;
 }
 
-.sidenav ul li a{
-    position: relative;
-    display: block;
-    color: #000000;
-    float: top;
-    padding: 14px 5px;
-    text-decoration: none;
-    font-size: 17px;
-    width: 220px;
-    text-align: left;
-    margin: inherit;
-    border-bottom: 1px solid rgb(176, 174, 174);
+.sidenav ul li a {
+  position: relative;
+  display: block;
+  color: #000000;
+  float: top;
+  padding: 14px 5px;
+  text-decoration: none;
+  font-size: 17px;
+  width: 220px;
+  text-align: left;
+  margin: inherit;
+  border-bottom: 1px solid rgb(176, 174, 174);
 }
-.sidenav ul li.has-sub-menu> ul li a {
-    padding-left: 2rem;
-    
+.sidenav ul li.has-sub-menu > ul li a {
+  padding-left: 2rem;
 }
-li.has-sub-menu> ul {
-    display: none;
-}
-
-.sidenav ul li.has-sub-menu> ul  {
-    padding-bottom: 0;
+li.has-sub-menu > ul {
+  display: none;
 }
 
-footer{
-    bottom: 0px;
-    right: 0px;
+.sidenav ul li.has-sub-menu > ul {
+  padding-bottom: 0;
+}
+
+footer {
+  bottom: 0px;
+  right: 0px;
 }
 .sidenav ul li a:hover,
-.sidenav ul li a.active{
-    color: #ffffff;
-    background:rgb(176, 174, 174);
-    border-left: 2px solid rgb(5, 68, 104);
+.sidenav ul li a.active {
+  color: #ffffff;
+  background: rgb(176, 174, 174);
+  border-left: 2px solid rgb(5, 68, 104);
+}
+.input-group {
+  display: block;
 }
 
 .sidenav ul li a:hover .icon,
-.sidenav ul li a.active .icon{
-    color: rgb(176, 174, 174);
+.sidenav ul li a.active .icon {
+  color: rgb(176, 174, 174);
 }
 
 .sidenav ul li a:hover:before,
-.sidenav ul li a.active:before{
-    display: block;
+.sidenav ul li a.active:before {
+  display: block;
 }
 html,
-body{
-    height: 100vh;
+body {
+  height: 100vh;
 }
-.sidenav ul li a .opener{
-    float:right;
+.sidenav ul li a .opener {
+  float: right;
 }
 table {
-    margin-bottom: 0.6rem;
+  margin-bottom: 0.6rem;
 }
 .sidebar-footer {
-    padding: 1.6666666667rem;
-
-  }
+  padding: 1.6666666667rem;
+}

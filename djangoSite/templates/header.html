@@ -1,26 +1,27 @@
 <div class="topnav">
+  <div>
     <a href="{% url 'index' %}">Home</a>
     <a href="{% url 'LeavingCert:index' %}">Leaving Certificate</a>
     <a href="{% url 'Math_161:index' %}">Math 161</a>
     <div class="dropdown">
-      <a href="{% url 'WebsiteProgress:index' %}">Website Progress
-      </a>
+      <a href="{% url 'WebsiteProgress:index' %}">Website Progress </a>
       <div class="dropdown-content">
         {% for phase in All_Phases %}
-          <a href="{% url 'WebsiteProgress:phase' phase.id %}">Phase {{phase.id}}</a>
+        <a href="{% url 'WebsiteProgress:phase' phase.id %}"
+          >Phase {{phase.id}}</a
+        >
         {% endfor %}
       </div>
     </div>
-    {% if request.user.is_authenticated %}
-    <div class="login">
-        <a href="{% url 'profile' %}" id="profile"> Profile</a>
-        <span>Hello {{request.user}}</span>
-        <a href="#" id="log"> Logout</a>
-    </div>
-    {% else %}
-    <div class="log">
-      <a href="{% url 'log' %}" id="log"> Login</a>
   </div>
-    {%endif %}
+  {% if request.user.is_authenticated %}
+  <div class="login">
+    <a href="{%url 'logout'%}" class="right"> Logout</a>
+    <a href="{% url 'profile' %}" class="right"> Profile</a>
   </div>
-  
+  {% else %}
+  <div class="login">
+    <a href="{% url 'login' %}" id="log"> Login</a>
+  </div>
+  {%endif %}
+</div>
