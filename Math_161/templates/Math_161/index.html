@@ -24,21 +24,22 @@
                             </td>
                         {%else%}
                             {%if week.quiz_Boolean%}
-                            <td>
-                                <a href="{% url 'Math_161:day' week_num=week.week_num  day=day %}"> {{day.day }}</a>
-                            </td>
-                            {%else%}
-                            <td colspan="2">
-                                Exam Week
-                            </td>
+                                <td>
+                                    <a href="{% url 'Math_161:day' week_num=week.week_num  day=day %}"> {{day.day }}</a>
+                                </td>
                             {%endif%}
+                            {%if not week.quiz_Boolean%}
 
+                            {%endif%}
                         {%endif%}
-
                     {% endfor %}
                     {% if week.quiz_Boolean %}
                         <td>
                             <a href="{% url 'Math_161:quiz' week_num=week.week_num%}">Quiz</a> 
+                        </td>
+                    {%else%}
+                        <td colspan="2">
+                            Exam Week
                         </td>
                     {% endif %} 
                 </tr>

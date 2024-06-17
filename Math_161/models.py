@@ -63,7 +63,7 @@ class Day(models.Model):
     day_worksheet_source= models.CharField(default="#",max_length=100)
     day_description = models.CharField(default="test",max_length=300)
     day_Slides_Boolean = models.BooleanField(default=False)
-    day_Slides_Source = models.CharField(default="test",max_length=30)
+    day_Slides_Source = models.CharField(default="test",max_length=200)
     def __str__(self) -> str:
         return self.day
     

@@ -12,14 +12,14 @@
         <th>Description</th>
     </tr>
     {% for day in week.days.all %}
-    <tr>
-        <td>
-            <a href="{% url 'Math_161:day' week_num=week.week_num  day=day %}"> {{day.day }}</a>
-        </td>
-        <td>
-            {{day.day_description}}
-        </td>
-    </tr>
+        <tr>
+            <td>
+                <a href="{% url 'Math_161:day' week_num=week.week_num  day=day %}"> {{day.day }}</a>
+            </td>
+            <td>
+                {{day.day_description}}
+            </td>
+        </tr>
     {% endfor %}
     {% if quiz_here%}
         <tr>

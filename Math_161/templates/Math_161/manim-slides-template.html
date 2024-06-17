@@ -2,6 +2,7 @@
 {% load static %}
 <div style="position:relative;padding-bottom:50%;">
     <!-- 56.25 comes from aspect ratio of 16:9, change this accordingly -->
+    {%if Day_Slide_length < 20%}
     <iframe
         style="width:80%;height:80%;position:absolute;left:0px;top:0px;"
         frameborder="0"
@@ -13,4 +14,16 @@
         src='{% static "Week_"|add:week_num|add:"/"|add:Day.day_Slides_Source|add:".html" %}'
         {% endwith %}>
     </iframe>
+    {%else%}
+    <iframe
+        style="width:80%;height:80%;position:absolute;left:0px;top:0px;"
+        frameborder="0"
+        width="80%"
+        height="50%"
+        allowfullscreen
+        allow="autoplay"
+        src='{{ Day.day_Slides_Source }}'>
+
+    </iframe>
+    {%endif%}
 </div>

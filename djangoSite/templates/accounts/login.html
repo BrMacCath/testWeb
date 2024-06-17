@@ -1,10 +1,7 @@
-{% extends "base_site.html" %}
-{% block content %}
+{% extends "base_site.html" %} {% block content %}
 <h1>Login</h1>
-
-Don't use this
-{% csrf_token %}
-{% for message in messages%}
-<p id="{{message}}">message</p>
-{% endfor %}
-{% endblock content %}
+<form method="post">
+  {% csrf_token %} {{ form }}
+  <button type="submit">Log In</button>
+</form>
+{% endfor %} {% endblock content %}

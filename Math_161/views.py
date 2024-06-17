@@ -36,7 +36,8 @@ def day(request,week_num,day):
             worksheet_source = days.day_worksheet_source
             Day_today = days
     if week.is_published:
-        context = {"week": week,"week_num":week_num,"day":day,"worksheet_source":worksheet_source,"Day":Day_today}
+
+        context = {"week": week,"week_num":week_num,"day":day,"worksheet_source":worksheet_source,"Day":Day_today,"Day_Slide_length":len(Day_today.day_Slides_Source)}
         return render(request, "Math_161/Day.html",context=context)
     else:
         return render(request, "Math_161/not_published.html")
