@@ -16,8 +16,8 @@
   </div>
   {% if request.user.is_authenticated %}
   <div class="login">
-    <a href="{%url 'logout'%}" class="right"> Logout</a>
     <a href="{% url 'profile' %}" class="right"> Profile</a>
+    <a href="{%url 'logout'%}" class="right"> Logout</a>
   </div>
   {% else %}
   <div class="login">

@@ -35,6 +35,7 @@
   margin-right: 0;
   width: 100%;
   position: fixed;
+  justify-content: space-between;
 }
 /* Style the links inside the navigation bar */
 .topnav a {
