@@ -1,0 +1,18 @@
+{% extends "base_site.html" %} {% block content %}
+
+<table>
+  <tr>
+    <th>Module</th>
+    <th>Desciption</th>
+  </tr>
+  {%for topic in topics%}
+  <tr>
+    <td>
+      <a href="{% url 'LeavingCert:topic' sub.sub_name topic.topic_name %}"
+        >Test</a
+      >
+    </td>
+    <td>{{topic.description}}</td>
+  </tr>
+  {%endfor%} {% endblock content %}
+</table>

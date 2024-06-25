@@ -4,4 +4,19 @@
   The goal here is to get some functionality on this website to have an
   interactive lesson on mathematics.
 </p>
+
+<table>
+  <tr>
+    <th>Module</th>
+    <th>Desciption</th>
+  </tr>
+  {% for sub in All_Subs %}
+  <tr>
+    <td>
+      <a href="{%url 'LeavingCert:sub' sub.sub_name  %}">{{sub.sub_name}}</a>
+    </td>
+    <td>{{sub.description}}</td>
+  </tr>
+  {%endfor%}
+</table>
 {% endblock content %}
