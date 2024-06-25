@@ -188,8 +188,21 @@ li.has-sub-menu > a span {
 .sidenav ul li.has-sub-menu > ul li a {
   padding-left: 2rem;
 }
-li.has-sub-menu > ul {
+.sidenav ul li.has-sub-menu > ul li ul li a {
+  padding-left: 4rem;
+}
+
+.transition {
+  transition: all 0.5s ease-out;
+}
+
+.hidden {
   display: none;
+  visibility: hidden;
+  opacity: 0;
+}
+ul li ul li a span.mark {
+  margin-right: 29px;
 }
 
 .sidenav ul li.has-sub-menu > ul {

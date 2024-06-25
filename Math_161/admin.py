@@ -2,6 +2,8 @@ from django.contrib import admin
 from .models import Day,Week,Quiz
 from django.utils.translation import ngettext
 import random
+from django.contrib.auth.admin import UserAdmin
+from .models import Students
 # Register your models here.
 
 weekday_with_class=[("Monday","Monday"),("Tuesday","Tuesday"),("Wednesday","Wednesday"),("Friday","Friday")]
@@ -88,6 +90,9 @@ class QuizAdmin(admin.ModelAdmin):
 
 
 
+
+
+# admin.site.register(Students,UserAdmin)
 
 admin.site.register(Week,WeekAdmin)
 admin.site.register(Quiz,QuizAdmin)

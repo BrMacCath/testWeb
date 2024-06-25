@@ -1,4 +1,3 @@
-from django.db import models
 from django.utils import timezone
 from datetime import datetime, timedelta
 
@@ -8,18 +7,14 @@ import uuid
 from django.utils.timezone import make_aware
 # Create your models here.
 
+from django.db import models
+from django.utils.translation import gettext_lazy as _
+
+#from .managers import CustomUserManager
+
+from django.contrib.auth.models import User, AbstractUser
+
 weekday_with_class=[("Monday","Monday"),("Tuesday","Tuesday"),("Wednesday","Wednesday"),("Friday","Friday")]
-
-
-## Week Model
-# This should have several characteristics.
-# 1. The week number
-# 2. The location of each of the index webpage.
-# 3. A general description of what is going on in that week.
-# 4. Create four instances of day with each instance of 
-# weekday_with_class used.
-# 5. Week title will be a short description for the sidebar navigation.
-# 6. Create a way to check when you should publish the notes.
 
 class Week(models.Model):
 
@@ -95,6 +90,46 @@ class Quiz(models.Model):
         now = timezone.now()
         return self.release_answers_date <= now
 
+class QuizResults(models.Model):
+    quiz = models.OneToOneField(Quiz, on_delete=models.CASCADE)
+    myNotes = models.CharField(default='Not filled in',max_length=300)
+    studentNotes = models.CharField(default='Not filled in',max_length=300)
+
+
+class Students(models.Model):
+    user = models.OneToOneField(User,on_delete=models.CASCADE)
+    quizzes = models.ForeignKey(QuizResults, on_delete=models.CASCADE)
+
+
+
+# class Students(AbstractUser):
+#     username = None
+#     email = models.EmailField(_("email address"), unique=True)
+
+#     USERNAME_FIELD = "email"
+#     REQUIRED_FIELDS = []
+
+#     objects = CustomUserManager()
+
+#     def __str__(self):
+#         return self.email
+
+
+
+
+# class Students(AbstractUser):
+#     class Role(models.TextChoices):
+#         ADMIN = "Admin",'Admin'
+#         STUDENT = "Student",'Student'
+
+
+#     role = models.CharField(max_length=50,choices=Role.choices)
+#     quizzes = models.ForeignKey(QuizResults, on_delete=models.CASCADE)
+
+#     def save(self, *args, **kwargs):
+#         if not self.pk:
+#             self.role =self.base_role
+#             return super().save(*args,**kwargs )
 
 
 

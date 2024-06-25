@@ -87,8 +87,7 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'djangoSite.wsgi.application'
-
-
+# AUTH_USER_MODEL = 'Math_161.Students'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 

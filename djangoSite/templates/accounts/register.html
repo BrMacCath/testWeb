@@ -3,7 +3,7 @@
 
 <form method="post" action="/register/">
   {% csrf_token %} {% for field in form%}
-  <p>{{field.label}}:{{field}}</p>
+  <p>{{field.label|rjust:30 }}:{{field}}</p>
   {%endfor%}
 
   <input type="submit" name="Create User" />

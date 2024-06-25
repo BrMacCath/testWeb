@@ -1,28 +1,49 @@
-<div class ="sidenav-container">
-    <div class="scroller">
-        <div class="sidenav">
-            <ul>
-                <li>
-                    <a href="{% url 'index' %}">Home</a>
-                </li>
-                <li>
-                    <a href="{% url 'contact' %}">Contact</a>
-                </li>
+<div class="sidenav-container">
+  <div class="scroller">
+    <div class="sidenav">
+      <ul>
+        <li>
+          <a href="{% url 'index' %}">Home</a>
+        </li>
+        <li>
+          <a href="{% url 'contact' %}">Contact</a>
+        </li>
 
-                {% for topic in All_Topics %}
-                <li class="has-sub-menu">
-                    <a href="{% url 'Misc:index' %}">{{topic.topic_name}}<span>+</span></a>
-                    <ul>
-                        <li>
-                            <a href="#">Test</a>
-                        </li>
-                    </ul>
+        {% for topic in All_Topics %}
+        <li class="has-sub-menu">
+          <a href="{% url 'Misc:index' %}"
+            >{{topic.topic_name}}<span class="mark">+</span></a
+          >
+          <ul class="hidden">
+            <li>
+              <a href="#">Test</a>
+            </li>
+          </ul>
+        </li>
+        {% endfor %} {% for topic in All_Topics %}
+        <li class="has-sub-menu">
+          <a href="{% url 'Misc:index' %}"
+            >{{topic.topic_name}}<span class="mark">+</span></a
+          >
+          <ul class="hidden">
+            <li>
+              <a href="#">Test</a>
+            </li>
+            <li class="has-sub-menu">
+              <a href="{% url 'Misc:index' %}"
+                >{{topic.topic_name}}<span class="mark">+</span></a
+              >
+              <ul class="hidden">
+                <li>
+                  <a href="#">Test</a>
                 </li>
-                {% endfor %}
-            </ul>
-            <div class="sidebar-footer">
-
-            </div>
-        </div>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        {% endfor %}
+      </ul>
+      <div class="sidebar-footer"></div>
     </div>
+  </div>
 </div>
