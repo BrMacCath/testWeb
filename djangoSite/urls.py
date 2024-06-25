@@ -29,8 +29,7 @@ urlpatterns = [
     path('WebsiteProgress/',include("WebsiteProgress.urls")),
     path('admin/', admin.site.urls),
     path('LeavingCert/',include("LeavingCert.urls")),
-    path('Misc/',include("Misc.urls")),
-    path('Math_161/',include("Math_161.urls")),
+
  
 ]
 

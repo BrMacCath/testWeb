@@ -1,4 +1,11 @@
 {% extends "base_site.html" %} {% block content %}
+<p></p>
+{% with sub_name=sub.sub_name %}
+<p></p>
+{% include ""|add:sub.sub_name|add:"/index.html" %}
+
+<p></p>
+{% endwith %}
 
 <table>
   <tr>

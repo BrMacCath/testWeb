@@ -212,6 +212,9 @@ li.has-sub-menu > a span {
 ul li ul li a span.mark {
   margin-right: 27px;
 }
+ul li ul li ul li a span.mark {
+  margin-right: 59px;
+}
 
 .sidenav ul li.has-sub-menu > ul {
   padding-bottom: 0;

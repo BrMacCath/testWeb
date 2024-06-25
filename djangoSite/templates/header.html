@@ -2,7 +2,6 @@
   <div>
     <a href="{% url 'index' %}">Home</a>
     <a href="{% url 'LeavingCert:index' %}">Leaving Certificate</a>
-    <a href="{% url 'Math_161:index' %}">Math 161</a>
     <div class="dropdown">
       <a href="{% url 'WebsiteProgress:index' %}">Website Progress </a>
       <div class="dropdown-content">
@@ -10,7 +9,7 @@
         <a href="{% url 'WebsiteProgress:phase' phase.id %}"
           >Phase {{phase.id}}</a
         >
-        {% endfor %}
+        {% empty%} {% endfor %}
       </div>
     </div>
   </div>

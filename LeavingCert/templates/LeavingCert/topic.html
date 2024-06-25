@@ -1,3 +1,16 @@
 {% extends "base_site.html" %} {% block content %}
 <p>Extend topic template</p>
+<table>
+  <tr>
+    <th>Module</th>
+    <th>Desciption</th>
+  </tr>
+  {%for unit in topic.unit_set.all%}
+  <tr>
+    <td>{{unit.unit_name}}</td>
+    <td></td>
+  </tr>
+  {%endfor%}
+</table>
+
 {% endblock content %}
