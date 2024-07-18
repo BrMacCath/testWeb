@@ -8,58 +8,6 @@
         <li>
           <a href="{% url 'contact' %}">Contact</a>
         </li>
-
-        <li class="has-sub-menu">
-          <a href="{% url 'LeavingCert:index' %}"
-            >Leaving Cert<span class="mark">+</span></a
-          >
-          <ul class="hidden">
-            {% for sub in All_Subs %}
-            <!-- -->
-            {% if sub.topic_set.all%}
-            <li class="has-sub-menu">
-              <a href="{% url 'LeavingCert:sub' sub.sub_name %}"
-                >{{sub.sub_name}}<span class="mark">+</span></a
-              >
-              <ul class="hidden">
-                {%for topic in sub.topic_set.all%}
-                <!--  -->
-                {% if topic.unit_set.all%}
-                <li class="has-sub-menu">
-                  <a
-                    href="{% url 'LeavingCert:topic' sub.sub_name topic.topic_name %}"
-                    >{{topic.topic_name}}<span class="mark">+</span></a
-                  >
-                  <ul class="hidden">
-                    {%for unit in topic.unit_set.all%}
-                    <li>
-                      <a href="{% url 'LeavingCert:index' %}"
-                        >{{unit.unit_name}}</a
-                      >
-                    </li>
-                    {%endfor%}
-                  </ul>
-                </li>
-
-                {%else%}
-                <li>
-                  <a
-                    href="{% url 'LeavingCert:topic' sub.sub_name topic.topic_name %}"
-                    >{{topic.topic_name}}</a
-                  >
-                </li>
-                {%endif%} {%endfor%}
-              </ul>
-            </li>
-            {%else%}
-            <li>
-              <a href="{% url 'LeavingCert:sub' sub.sub_name %}"
-                >{{sub.sub_name}}</a
-              >
-            </li>
-            {%endif%} {%endfor%}
-          </ul>
-        </li>
       </ul>
       <div class="sidebar-footer"></div>
     </div>

@@ -28,8 +28,7 @@ urlpatterns = [
     path("profile/", views.profilePage, name="profile"),
     path('WebsiteProgress/',include("WebsiteProgress.urls")),
     path('admin/', admin.site.urls),
-    path('LeavingCert/',include("LeavingCert.urls")),
-
+    path('Math_161/',include("Math_161.urls")),
  
 ]
 
